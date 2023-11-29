@@ -1,0 +1,3 @@
+assembly: 'pb'
+genome_fasta:  'pb.fna'
+annotation_file:  'pb.gtf'

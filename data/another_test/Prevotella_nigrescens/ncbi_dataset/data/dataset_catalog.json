@@ -1,0 +1,27 @@
+{
+"apiVersion": "V2",
+"assemblies": [
+{
+  "files": [
+    {
+      "filePath": "data_summary.tsv",
+      "fileType": "DATA_TABLE"
+    },
+    {
+      "filePath": "assembly_data_report.jsonl",
+      "fileType": "DATA_REPORT"
+    }
+  ]
+},{
+  "accession": "GCF_018127825.1",
+  "files": [
+    {
+      "filePath": "GCF_018127825.1/GCF_018127825.1_ASM1812782v1_genomic.fna",
+      "fileType": "GENOMIC_NUCLEOTIDE_FASTA"
+    },
+    {
+      "filePath": "GCF_018127825.1/genomic.gtf",
+      "fileType": "GTF"
+    }
+  ]
+}]}

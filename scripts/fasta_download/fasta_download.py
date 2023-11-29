@@ -18,8 +18,8 @@ def download_seq(species_list):
     Entrez.email = "ph4342ng-s@student.lu.se"
 
     for species in species_list: # Loop through the species list.
-        search_term = f"{species} AND 16s ribosomal RNA gene AND 1:1600[SLEN], NOT shotgun, NOT partial, AND complete sequence" # Search term for NCBI.
-        handle = Entrez.esearch(db="nuccore", term=search_term, retmax=1) # Search NCBI.
+        search_term = f"{species} AND 16s ribosomal RNA gene AND 1:1600[SLEN], NOT shotgun, NOT partial" # Search term for NCBI.
+        handle = Entrez.esearch(db="nuccore", term=search_term, retmax=5) # Search NCBI.
         record = Entrez.read(handle) # Read the search results.
         handle.close() # Close the handle.
 
