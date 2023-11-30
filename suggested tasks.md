@@ -53,6 +53,6 @@ MERFISH :  https://www.pnas.org/doi/abs/10.1073/pnas.1912459116     dataset s1 s
  how do we select. overhang sequences? are they suggestions??  otherwise see previously mentioned detective work to find these in litterature.
  (perhaps also look at arcadia´s python script for overhang.)
 
-
-
+8. Add document listing all our microbes with name and Importantly! the reference where we found info that this microbe was found in the lung.
+8.1 Add folder with all the  genome files listed in document (point 8). 
  
