@@ -4,22 +4,22 @@
 
 
 
-2. Read and present the paintshop workflow  in detail (underlying code software used, and why) at one of our meetings.
+~~ 2. Read and present the paintshop workflow  in detail (underlying code software used, and why) at one of our meetings. ~~
 
 
 
 
-3. regarding workflow using paintshop followed by quality control :
+~~ 3. regarding workflow using paintshop followed by quality control : ~~
 
-Check limits of how you can blast sequences for similarity. This works perfect for a few but will of course have limitations for many.
+~~ Check limits of how you can blast sequences for similarity. This works perfect for a few but will of course have limitations for many. ~~
 
-You can download blast and do it offline. How does it scale can one do that for so many probes ?
+~~ You can download blast and do it offline. How does it scale can one do that for so many probes ? ~~
 
-https://www.youtube.com/watch?v=A-DPU5xxyHs
+~~ https://www.youtube.com/watch?v=A-DPU5xxyHs ~~
 
-Here is a list https://www.ebi.ac.uk/Tools/msa/  of massive sequence aligners
+~~ Here is a list https://www.ebi.ac.uk/Tools/msa/  of massive sequence aligners ~~
 
-Other well known software are MAFFT or clustalW. Perhaps they perform better.  
+~~ Other well known software are MAFFT or clustalW. Perhaps they perform better. ~~ 
 
 
 
@@ -29,9 +29,9 @@ This will be parts of the intro section in your thesis and it feels good to know
 
 
 
-5. Regarding the other approach aligning the genomes and find unique regions or deletions that can be used to discriminate species. This is still a valid approach and we similarly to "3".  We struggled to find performant alternatives. I recently found tools such as FastANI and the newer SKANI:
-https://github.com/bluenote-1577/skani They seem be able to aligning many large genomes in short time.
-Perhaps you could have a go on Skani !? try just a few and see.
+~~ 5. Regarding the other approach aligning the genomes and find unique regions or deletions that can be used to discriminate species. This is still a valid approach and we similarly to "3".  We struggled to find performant alternatives. I recently found tools such as FastANI and the newer SKANI: ~~
+~~ https://github.com/bluenote-1577/skani They seem be able to aligning many large genomes in short time. ~~
+~~ Perhaps you could have a go on Skani !? try just a few and see. ~~
 
 
 
