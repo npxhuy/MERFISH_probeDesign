@@ -1,0 +1,8 @@
+assembly: 'prevotella_nigrescens'
+genome_fasta:  'prevotella_nigrescens.fna'
+annotation_file:  'prevotella_nigrescens.gtf'
+blockparse_min_length: 30
+blockparse_max_length: 30
+blockparse_min_tm: 42
+blockparse_max_tm: 47
+model_temp: 42

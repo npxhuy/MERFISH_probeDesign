@@ -1,0 +1,3 @@
+assembly: 'loop_paintshop.sh'
+genome_fasta:  'loop_paintshop.sh.fna'
+annotation_file:  'loop_paintshop.sh.gtf'

@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 9 of /Users/hy/Documents/GitHub/thesis/paintshop/PaintSHOP_pipeline/workflow/Snakefile:
+Missing input files for rule parse_genome:
+codebook.fna

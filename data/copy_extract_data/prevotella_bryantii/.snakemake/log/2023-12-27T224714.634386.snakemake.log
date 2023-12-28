@@ -1,0 +1,483 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	finish
+	1	gen_iso_db
+	1	gen_refseq_db
+	1	merge_flat_annotations
+	1	merge_probes
+	1	parse_genome
+	1	parse_gtf
+	1	split_chroms
+	1	zip_iso_db
+	1	zip_probes
+	1	zip_refseq_db
+	12
+
+[Wed Dec 27 22:47:14 2023]
+rule parse_genome:
+    input: prevotella_bryantii.fna
+    output: pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa
+    jobid: 11
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:47:18 2023]
+Finished job 11.
+1 of 12 steps (8%) done
+
+[Wed Dec 27 22:47:18 2023]
+checkpoint split_chroms:
+    input: pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt
+    output: pipeline_output/01_reference_files/03_chrom_fastas
+    jobid: 8
+Downstream jobs will be updated after completion.
+
+[Wed Dec 27 22:47:18 2023]
+checkpoint parse_gtf:
+    input: prevotella_bryantii.gtf, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt
+    output: pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii.bed, pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes
+    jobid: 9
+Downstream jobs will be updated after completion.
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Updating job 5 (merge_probes).
+Updating job 6 (gen_refseq_db).
+Updating job 7 (gen_iso_db).
+[Wed Dec 27 22:47:21 2023]
+Finished job 8.
+2 of 36 steps (6%) done
+
+[Wed Dec 27 22:47:21 2023]
+rule design_probes:
+    input: pipeline_output/01_reference_files/03_chrom_fastas/NZ_CP091798.1.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa
+    output: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP091798.1.fastq
+    jobid: 36
+    wildcards: chrom=NZ_CP091798.1
+
+
+[Wed Dec 27 22:47:21 2023]
+rule build_bowtie:
+    input: pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa
+    output: pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.2.bt2
+    jobid: 37
+    threads: 4
+
+
+[Wed Dec 27 22:47:21 2023]
+rule build_jellyfish:
+    input: pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa
+    output: pipeline_output/01_reference_files/07_jf_files/prevotella_bryantii.jf
+    jobid: 22
+
+
+[Wed Dec 27 22:47:21 2023]
+rule design_probes:
+    input: pipeline_output/01_reference_files/03_chrom_fastas/NZ_CP091797.1.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/prevotella_bryantii.fa
+    output: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP091797.1.fastq
+    jobid: 38
+    wildcards: chrom=NZ_CP091797.1
+
+Updating job 10 (merge_flat_annotations).
+Updating job 13 (gen_refseq_db).
+[Wed Dec 27 22:47:21 2023]
+Finished job 9.
+3 of 38 steps (8%) done
+
+[Wed Dec 27 22:47:21 2023]
+rule flatten_isoforms:
+    input: pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes/NZ_CP091798.1_filtered_gtf.dat, pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii.bed, pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes
+    output: pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP091798.1_iso_flat.bed
+    jobid: 42
+    wildcards: chrom_gtf=NZ_CP091798.1
+
+[Wed Dec 27 22:47:21 2023]
+rule flatten_isoforms:
+    input: pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes/NZ_CP091797.1_filtered_gtf.dat, pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii.bed, pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes
+    output: pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP091797.1_iso_flat.bed
+    jobid: 41
+    wildcards: chrom_gtf=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/dca8a186
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/dca8a186
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:47:27 2023]
+Finished job 37.
+4 of 38 steps (11%) done
+[Wed Dec 27 22:47:28 2023]
+Finished job 41.
+5 of 38 steps (13%) done
+[Wed Dec 27 22:47:28 2023]
+Finished job 42.
+6 of 38 steps (16%) done
+
+[Wed Dec 27 22:47:28 2023]
+rule merge_flat_annotations:
+    input: pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP091797.1_iso_flat.bed, pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP091798.1_iso_flat.bed
+    output: pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii_iso_flat.bed
+    jobid: 40
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:47:30 2023]
+Finished job 40.
+7 of 38 steps (18%) done
+[Wed Dec 27 22:48:15 2023]
+Finished job 22.
+8 of 38 steps (21%) done
+[Wed Dec 27 22:48:37 2023]
+Finished job 38.
+9 of 38 steps (24%) done
+
+[Wed Dec 27 22:48:37 2023]
+rule align_probes:
+    input: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP091797.1.fastq, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.2.bt2
+    output: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091797.1.bam
+    jobid: 35
+    wildcards: chrom=NZ_CP091797.1
+    threads: 4
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:39 2023]
+Finished job 35.
+10 of 38 steps (26%) done
+
+[Wed Dec 27 22:48:39 2023]
+rule extract_alignment_scores:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091797.1.bam
+    output: pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP091797.1_AS.txt
+    jobid: 33
+    wildcards: chrom=NZ_CP091797.1
+
+
+[Wed Dec 27 22:48:39 2023]
+rule sam_to_pairwise:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091797.1.bam
+    output: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP091797.1_pairwise.out
+    jobid: 32
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:40 2023]
+Finished job 33.
+11 of 38 steps (29%) done
+[Wed Dec 27 22:48:41 2023]
+Finished job 32.
+12 of 38 steps (32%) done
+
+[Wed Dec 27 22:48:41 2023]
+rule parse_pairwise:
+    input: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP091797.1_pairwise.out, pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP091797.1_AS.txt
+    output: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP091797.1_alignments.csv
+    jobid: 29
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:45 2023]
+Finished job 29.
+13 of 38 steps (34%) done
+
+[Wed Dec 27 22:48:45 2023]
+rule predict_duplex:
+    input: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP091797.1_alignments.csv, /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/workflow/pickled_models/42_all_fixed_xgb.pickle.dat
+    output: pipeline_output/02_intermediate_files/07_predictions/NZ_CP091797.1_predictions.csv
+    jobid: 27
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:49 2023]
+Finished job 27.
+14 of 38 steps (37%) done
+
+[Wed Dec 27 22:48:49 2023]
+rule score:
+    input: pipeline_output/02_intermediate_files/07_predictions/NZ_CP091797.1_predictions.csv
+    output: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP091797.1_probes.bed
+    jobid: 25
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:53 2023]
+Finished job 25.
+15 of 38 steps (39%) done
+
+[Wed Dec 27 22:48:53 2023]
+rule filter_n_probes:
+    input: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP091797.1_probes.bed
+    output: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091797.1_probes.bed
+    jobid: 23
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:54 2023]
+Finished job 23.
+16 of 38 steps (42%) done
+
+[Wed Dec 27 22:48:54 2023]
+rule max_kmer:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091797.1_probes.bed, pipeline_output/01_reference_files/07_jf_files/prevotella_bryantii.jf
+    output: pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP091797.1_kmer_max.txt
+    jobid: 20
+    wildcards: chrom=NZ_CP091797.1
+
+[Wed Dec 27 22:48:54 2023]
+rule calc_prob:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091797.1_probes.bed
+    output: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP091797.1_prob.txt
+    jobid: 19
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:48:57 2023]
+Finished job 20.
+17 of 38 steps (45%) done
+[Wed Dec 27 22:49:10 2023]
+Finished job 19.
+18 of 38 steps (47%) done
+
+[Wed Dec 27 22:49:10 2023]
+rule final_probes:
+    input: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP091797.1_prob.txt, pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP091797.1_kmer_max.txt
+    output: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091797.1.tsv
+    jobid: 16
+    wildcards: chrom=NZ_CP091797.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:49:13 2023]
+Finished job 16.
+19 of 38 steps (50%) done
+[Wed Dec 27 22:50:09 2023]
+Finished job 36.
+20 of 38 steps (53%) done
+
+[Wed Dec 27 22:50:09 2023]
+rule align_probes:
+    input: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP091798.1.fastq, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/prevotella_bryantii/prevotella_bryantii.rev.2.bt2
+    output: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091798.1.bam
+    jobid: 34
+    wildcards: chrom=NZ_CP091798.1
+    threads: 4
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:10 2023]
+Finished job 34.
+21 of 38 steps (55%) done
+
+[Wed Dec 27 22:50:10 2023]
+rule sam_to_pairwise:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091798.1.bam
+    output: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP091798.1_pairwise.out
+    jobid: 30
+    wildcards: chrom=NZ_CP091798.1
+
+
+[Wed Dec 27 22:50:10 2023]
+rule extract_alignment_scores:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP091798.1.bam
+    output: pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP091798.1_AS.txt
+    jobid: 31
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:12 2023]
+Finished job 31.
+22 of 38 steps (58%) done
+[Wed Dec 27 22:50:12 2023]
+Finished job 30.
+23 of 38 steps (61%) done
+
+[Wed Dec 27 22:50:12 2023]
+rule parse_pairwise:
+    input: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP091798.1_pairwise.out, pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP091798.1_AS.txt
+    output: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP091798.1_alignments.csv
+    jobid: 28
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:17 2023]
+Finished job 28.
+24 of 38 steps (63%) done
+
+[Wed Dec 27 22:50:17 2023]
+rule predict_duplex:
+    input: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP091798.1_alignments.csv, /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/workflow/pickled_models/42_all_fixed_xgb.pickle.dat
+    output: pipeline_output/02_intermediate_files/07_predictions/NZ_CP091798.1_predictions.csv
+    jobid: 26
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:21 2023]
+Finished job 26.
+25 of 38 steps (66%) done
+
+[Wed Dec 27 22:50:21 2023]
+rule score:
+    input: pipeline_output/02_intermediate_files/07_predictions/NZ_CP091798.1_predictions.csv
+    output: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP091798.1_probes.bed
+    jobid: 24
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:25 2023]
+Finished job 24.
+26 of 38 steps (68%) done
+
+[Wed Dec 27 22:50:25 2023]
+rule filter_n_probes:
+    input: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP091798.1_probes.bed
+    output: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091798.1_probes.bed
+    jobid: 21
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:26 2023]
+Finished job 21.
+27 of 38 steps (71%) done
+
+[Wed Dec 27 22:50:26 2023]
+rule max_kmer:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091798.1_probes.bed, pipeline_output/01_reference_files/07_jf_files/prevotella_bryantii.jf
+    output: pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP091798.1_kmer_max.txt
+    jobid: 18
+    wildcards: chrom=NZ_CP091798.1
+
+[Wed Dec 27 22:50:26 2023]
+rule calc_prob:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP091798.1_probes.bed
+    output: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP091798.1_prob.txt
+    jobid: 17
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:29 2023]
+Finished job 18.
+28 of 38 steps (74%) done
+[Wed Dec 27 22:50:46 2023]
+Finished job 17.
+29 of 38 steps (76%) done
+
+[Wed Dec 27 22:50:46 2023]
+rule final_probes:
+    input: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP091798.1_prob.txt, pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP091798.1_kmer_max.txt
+    output: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091798.1.tsv
+    jobid: 15
+    wildcards: chrom=NZ_CP091798.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:49 2023]
+Finished job 15.
+30 of 38 steps (79%) done
+
+[Wed Dec 27 22:50:49 2023]
+rule gen_iso_db:
+    input: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091798.1.tsv, pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091797.1.tsv, pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii_iso_flat.bed
+    output: pipeline_output/03_output_files/03_rna_probes_iso/prevotella_bryantii_iso_newBalance.tsv
+    jobid: 14
+
+[Wed Dec 27 22:50:49 2023]
+rule merge_probes:
+    input: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091798.1.tsv, pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091797.1.tsv
+    output: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance.tsv
+    jobid: 12
+
+
+[Wed Dec 27 22:50:49 2023]
+rule gen_refseq_db:
+    input: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091798.1.tsv, pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance_NZ_CP091797.1.tsv, pipeline_output/01_reference_files/05_annotation_files/prevotella_bryantii.bed
+    output: pipeline_output/03_output_files/02_rna_probes_all/prevotella_bryantii_refseq_newBalance.tsv
+    jobid: 39
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:51 2023]
+Finished job 12.
+31 of 38 steps (82%) done
+
+[Wed Dec 27 22:50:51 2023]
+rule zip_probes:
+    input: pipeline_output/03_output_files/01_dna_probes/prevotella_bryantii_all_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_all_newBalance.zip
+    jobid: 2
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:52 2023]
+Finished job 2.
+32 of 38 steps (84%) done
+[Wed Dec 27 22:50:53 2023]
+Finished job 14.
+33 of 38 steps (87%) done
+[Wed Dec 27 22:50:53 2023]
+Finished job 39.
+34 of 38 steps (89%) done
+
+[Wed Dec 27 22:50:53 2023]
+rule zip_refseq_db:
+    input: pipeline_output/03_output_files/02_rna_probes_all/prevotella_bryantii_refseq_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_refseq_newBalance.zip
+    jobid: 3
+
+
+[Wed Dec 27 22:50:53 2023]
+rule zip_iso_db:
+    input: pipeline_output/03_output_files/03_rna_probes_iso/prevotella_bryantii_iso_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_iso_newBalance.zip
+    jobid: 4
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:50:54 2023]
+Finished job 4.
+35 of 38 steps (92%) done
+[Wed Dec 27 22:50:54 2023]
+Finished job 3.
+36 of 38 steps (95%) done
+
+[Wed Dec 27 22:50:54 2023]
+rule finish:
+    input: pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_all_newBalance.zip, pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_refseq_newBalance.zip, pipeline_output/03_output_files/04_zip_archives/prevotella_bryantii_iso_newBalance.zip
+    output: pipeline_output/DONE.txt
+    jobid: 1
+
+[Wed Dec 27 22:50:54 2023]
+Finished job 1.
+37 of 38 steps (97%) done
+
+[Wed Dec 27 22:50:54 2023]
+localrule all:
+    input: pipeline_output/DONE.txt
+    jobid: 0
+
+[Wed Dec 27 22:50:54 2023]
+Finished job 0.
+38 of 38 steps (100%) done
+Complete log: /Users/hy/Documents/GitHub/thesis/data/copy_extract_data/prevotella_bryantii/.snakemake/log/2023-12-27T224714.634386.snakemake.log

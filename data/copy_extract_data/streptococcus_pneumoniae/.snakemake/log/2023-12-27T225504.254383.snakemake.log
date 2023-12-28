@@ -1,0 +1,471 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	finish
+	1	gen_iso_db
+	1	gen_refseq_db
+	1	merge_flat_annotations
+	1	merge_probes
+	1	parse_genome
+	1	parse_gtf
+	1	split_chroms
+	1	zip_iso_db
+	1	zip_probes
+	1	zip_refseq_db
+	12
+
+[Wed Dec 27 22:55:04 2023]
+rule parse_genome:
+    input: streptococcus_pneumoniae.fna
+    output: pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa
+    jobid: 11
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:08 2023]
+Finished job 11.
+1 of 12 steps (8%) done
+
+[Wed Dec 27 22:55:08 2023]
+checkpoint split_chroms:
+    input: pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt
+    output: pipeline_output/01_reference_files/03_chrom_fastas
+    jobid: 8
+Downstream jobs will be updated after completion.
+
+[Wed Dec 27 22:55:08 2023]
+checkpoint parse_gtf:
+    input: streptococcus_pneumoniae.gtf, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt
+    output: pipeline_output/01_reference_files/05_annotation_files/streptococcus_pneumoniae.bed, pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes
+    jobid: 9
+Downstream jobs will be updated after completion.
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Updating job 5 (merge_probes).
+Updating job 6 (gen_refseq_db).
+Updating job 7 (gen_iso_db).
+[Wed Dec 27 22:55:12 2023]
+Finished job 8.
+2 of 36 steps (6%) done
+
+[Wed Dec 27 22:55:12 2023]
+rule build_bowtie:
+    input: pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa
+    output: pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.2.bt2
+    jobid: 37
+    threads: 4
+
+
+[Wed Dec 27 22:55:12 2023]
+rule build_jellyfish:
+    input: pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa
+    output: pipeline_output/01_reference_files/07_jf_files/streptococcus_pneumoniae.jf
+    jobid: 22
+
+
+[Wed Dec 27 22:55:12 2023]
+rule design_probes:
+    input: pipeline_output/01_reference_files/03_chrom_fastas/NZ_CP020549.1.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa
+    output: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP020549.1.fastq
+    jobid: 38
+    wildcards: chrom=NZ_CP020549.1
+
+
+[Wed Dec 27 22:55:12 2023]
+rule design_probes:
+    input: pipeline_output/01_reference_files/03_chrom_fastas/NZ_CP020550.1.fa, pipeline_output/01_reference_files/01_chrom_names/chrom_names.txt, pipeline_output/01_reference_files/01_chrom_names/removed_unk.txt, pipeline_output/01_reference_files/01_chrom_names/removed_excl.txt, pipeline_output/01_reference_files/01_chrom_names/removed_rand.txt, pipeline_output/01_reference_files/01_chrom_names/removed_alt.txt, pipeline_output/01_reference_files/01_chrom_names/removed_hap.txt, pipeline_output/01_reference_files/01_chrom_names/removed_fix.txt, pipeline_output/01_reference_files/02_multi_fasta/streptococcus_pneumoniae.fa
+    output: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP020550.1.fastq
+    jobid: 36
+    wildcards: chrom=NZ_CP020550.1
+
+Updating job 10 (merge_flat_annotations).
+Updating job 13 (gen_refseq_db).
+[Wed Dec 27 22:55:12 2023]
+Finished job 9.
+3 of 37 steps (8%) done
+
+[Wed Dec 27 22:55:12 2023]
+rule flatten_isoforms:
+    input: pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes/NZ_CP020549.1_filtered_gtf.dat, pipeline_output/01_reference_files/05_annotation_files/streptococcus_pneumoniae.bed, pipeline_output/02_intermediate_files/01_chrom_gtf_dataframes
+    output: pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP020549.1_iso_flat.bed
+    jobid: 41
+    wildcards: chrom_gtf=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/dca8a186
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/dca8a186
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:15 2023]
+Finished job 36.
+4 of 37 steps (11%) done
+[Wed Dec 27 22:55:17 2023]
+Finished job 37.
+5 of 37 steps (14%) done
+
+[Wed Dec 27 22:55:17 2023]
+rule align_probes:
+    input: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP020550.1.fastq, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.2.bt2
+    output: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020550.1.bam
+    jobid: 34
+    wildcards: chrom=NZ_CP020550.1
+    threads: 4
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:19 2023]
+Finished job 41.
+6 of 37 steps (16%) done
+
+[Wed Dec 27 22:55:19 2023]
+rule merge_flat_annotations:
+    input: pipeline_output/01_reference_files/04_chrom_iso_flat_beds/NZ_CP020549.1_iso_flat.bed
+    output: pipeline_output/01_reference_files/05_annotation_files/streptococcus_pneumoniae_iso_flat.bed
+    jobid: 40
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:19 2023]
+Finished job 34.
+7 of 37 steps (19%) done
+
+[Wed Dec 27 22:55:19 2023]
+rule extract_alignment_scores:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020550.1.bam
+    output: pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP020550.1_AS.txt
+    jobid: 31
+    wildcards: chrom=NZ_CP020550.1
+
+
+[Wed Dec 27 22:55:20 2023]
+rule sam_to_pairwise:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020550.1.bam
+    output: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP020550.1_pairwise.out
+    jobid: 30
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:21 2023]
+Finished job 40.
+8 of 37 steps (22%) done
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:21 2023]
+Finished job 31.
+9 of 37 steps (24%) done
+[Wed Dec 27 22:55:21 2023]
+Finished job 30.
+10 of 37 steps (27%) done
+
+[Wed Dec 27 22:55:21 2023]
+rule parse_pairwise:
+    input: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP020550.1_pairwise.out, pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP020550.1_AS.txt
+    output: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP020550.1_alignments.csv
+    jobid: 28
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:25 2023]
+Finished job 28.
+11 of 37 steps (30%) done
+
+[Wed Dec 27 22:55:25 2023]
+rule predict_duplex:
+    input: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP020550.1_alignments.csv, /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/workflow/pickled_models/42_all_fixed_xgb.pickle.dat
+    output: pipeline_output/02_intermediate_files/07_predictions/NZ_CP020550.1_predictions.csv
+    jobid: 26
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:29 2023]
+Finished job 26.
+12 of 37 steps (32%) done
+
+[Wed Dec 27 22:55:29 2023]
+rule score:
+    input: pipeline_output/02_intermediate_files/07_predictions/NZ_CP020550.1_predictions.csv
+    output: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP020550.1_probes.bed
+    jobid: 24
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:32 2023]
+Finished job 24.
+13 of 37 steps (35%) done
+
+[Wed Dec 27 22:55:32 2023]
+rule filter_n_probes:
+    input: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP020550.1_probes.bed
+    output: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020550.1_probes.bed
+    jobid: 21
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:34 2023]
+Finished job 21.
+14 of 37 steps (38%) done
+
+[Wed Dec 27 22:55:34 2023]
+rule calc_prob:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020550.1_probes.bed
+    output: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP020550.1_prob.txt
+    jobid: 17
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:55:37 2023]
+Finished job 17.
+15 of 37 steps (41%) done
+[Wed Dec 27 22:56:05 2023]
+Finished job 22.
+16 of 37 steps (43%) done
+
+[Wed Dec 27 22:56:05 2023]
+rule max_kmer:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020550.1_probes.bed, pipeline_output/01_reference_files/07_jf_files/streptococcus_pneumoniae.jf
+    output: pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP020550.1_kmer_max.txt
+    jobid: 18
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:56:09 2023]
+Finished job 18.
+17 of 37 steps (46%) done
+
+[Wed Dec 27 22:56:09 2023]
+rule final_probes:
+    input: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP020550.1_prob.txt, pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP020550.1_kmer_max.txt
+    output: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020550.1.tsv
+    jobid: 15
+    wildcards: chrom=NZ_CP020550.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:56:12 2023]
+Finished job 15.
+18 of 37 steps (49%) done
+[Wed Dec 27 22:57:38 2023]
+Finished job 38.
+19 of 37 steps (51%) done
+
+[Wed Dec 27 22:57:38 2023]
+rule align_probes:
+    input: pipeline_output/02_intermediate_files/02_init_probes/NZ_CP020549.1.fastq, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.2.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.3.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.4.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.1.bt2, pipeline_output/01_reference_files/06_bowtie2_indices/streptococcus_pneumoniae/streptococcus_pneumoniae.rev.2.bt2
+    output: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020549.1.bam
+    jobid: 35
+    wildcards: chrom=NZ_CP020549.1
+    threads: 4
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:57:40 2023]
+Finished job 35.
+20 of 37 steps (54%) done
+
+[Wed Dec 27 22:57:40 2023]
+rule sam_to_pairwise:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020549.1.bam
+    output: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP020549.1_pairwise.out
+    jobid: 32
+    wildcards: chrom=NZ_CP020549.1
+
+
+[Wed Dec 27 22:57:40 2023]
+rule extract_alignment_scores:
+    input: pipeline_output/02_intermediate_files/03_alignments/NZ_CP020549.1.bam
+    output: pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP020549.1_AS.txt
+    jobid: 33
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:57:42 2023]
+Finished job 33.
+21 of 37 steps (57%) done
+[Wed Dec 27 22:57:43 2023]
+Finished job 32.
+22 of 37 steps (59%) done
+
+[Wed Dec 27 22:57:43 2023]
+rule parse_pairwise:
+    input: pipeline_output/02_intermediate_files/04_pairwise_alignments/NZ_CP020549.1_pairwise.out, pipeline_output/02_intermediate_files/05_alignment_scores/NZ_CP020549.1_AS.txt
+    output: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP020549.1_alignments.csv
+    jobid: 29
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:57:48 2023]
+Finished job 29.
+23 of 37 steps (62%) done
+
+[Wed Dec 27 22:57:48 2023]
+rule predict_duplex:
+    input: pipeline_output/02_intermediate_files/06_data_frames/NZ_CP020549.1_alignments.csv, /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/workflow/pickled_models/42_all_fixed_xgb.pickle.dat
+    output: pipeline_output/02_intermediate_files/07_predictions/NZ_CP020549.1_predictions.csv
+    jobid: 27
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:57:53 2023]
+Finished job 27.
+24 of 37 steps (65%) done
+
+[Wed Dec 27 22:57:53 2023]
+rule score:
+    input: pipeline_output/02_intermediate_files/07_predictions/NZ_CP020549.1_predictions.csv
+    output: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP020549.1_probes.bed
+    jobid: 25
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:57:58 2023]
+Finished job 25.
+25 of 37 steps (68%) done
+
+[Wed Dec 27 22:57:58 2023]
+rule filter_n_probes:
+    input: pipeline_output/02_intermediate_files/08_scored_probes/NZ_CP020549.1_probes.bed
+    output: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020549.1_probes.bed
+    jobid: 23
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:00 2023]
+Finished job 23.
+26 of 37 steps (70%) done
+
+[Wed Dec 27 22:58:00 2023]
+rule calc_prob:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020549.1_probes.bed
+    output: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP020549.1_prob.txt
+    jobid: 19
+    wildcards: chrom=NZ_CP020549.1
+
+[Wed Dec 27 22:58:00 2023]
+rule max_kmer:
+    input: pipeline_output/02_intermediate_files/09_probes_filtered/NZ_CP020549.1_probes.bed, pipeline_output/01_reference_files/07_jf_files/streptococcus_pneumoniae.jf
+    output: pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP020549.1_kmer_max.txt
+    jobid: 20
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:04 2023]
+Finished job 20.
+27 of 37 steps (73%) done
+[Wed Dec 27 22:58:25 2023]
+Finished job 19.
+28 of 37 steps (76%) done
+
+[Wed Dec 27 22:58:25 2023]
+rule final_probes:
+    input: pipeline_output/02_intermediate_files/11_prob_values/NZ_CP020549.1_prob.txt, pipeline_output/02_intermediate_files/10_max_kmer_counts/NZ_CP020549.1_kmer_max.txt
+    output: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020549.1.tsv
+    jobid: 16
+    wildcards: chrom=NZ_CP020549.1
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:28 2023]
+Finished job 16.
+29 of 37 steps (78%) done
+
+[Wed Dec 27 22:58:28 2023]
+rule gen_iso_db:
+    input: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020550.1.tsv, pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020549.1.tsv, pipeline_output/01_reference_files/05_annotation_files/streptococcus_pneumoniae_iso_flat.bed
+    output: pipeline_output/03_output_files/03_rna_probes_iso/streptococcus_pneumoniae_iso_newBalance.tsv
+    jobid: 14
+
+[Wed Dec 27 22:58:28 2023]
+rule gen_refseq_db:
+    input: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020550.1.tsv, pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020549.1.tsv, pipeline_output/01_reference_files/05_annotation_files/streptococcus_pneumoniae.bed
+    output: pipeline_output/03_output_files/02_rna_probes_all/streptococcus_pneumoniae_refseq_newBalance.tsv
+    jobid: 39
+
+[Wed Dec 27 22:58:28 2023]
+rule merge_probes:
+    input: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020550.1.tsv, pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance_NZ_CP020549.1.tsv
+    output: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance.tsv
+    jobid: 12
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:30 2023]
+Finished job 12.
+30 of 37 steps (81%) done
+
+[Wed Dec 27 22:58:30 2023]
+rule zip_probes:
+    input: pipeline_output/03_output_files/01_dna_probes/streptococcus_pneumoniae_all_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_all_newBalance.zip
+    jobid: 2
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:31 2023]
+Finished job 2.
+31 of 37 steps (84%) done
+[Wed Dec 27 22:58:32 2023]
+Finished job 39.
+32 of 37 steps (86%) done
+[Wed Dec 27 22:58:32 2023]
+Finished job 14.
+33 of 37 steps (89%) done
+
+[Wed Dec 27 22:58:32 2023]
+rule zip_iso_db:
+    input: pipeline_output/03_output_files/03_rna_probes_iso/streptococcus_pneumoniae_iso_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_iso_newBalance.zip
+    jobid: 4
+
+
+[Wed Dec 27 22:58:32 2023]
+rule zip_refseq_db:
+    input: pipeline_output/03_output_files/02_rna_probes_all/streptococcus_pneumoniae_refseq_newBalance.tsv
+    output: pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_refseq_newBalance.zip
+    jobid: 3
+
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+Activating conda environment: /Users/hy/Documents/GitHub/thesis/PaintSHOP_pipeline/shared_conda_envs/6847ec1c
+[Wed Dec 27 22:58:34 2023]
+Finished job 4.
+34 of 37 steps (92%) done
+[Wed Dec 27 22:58:34 2023]
+Finished job 3.
+35 of 37 steps (95%) done
+
+[Wed Dec 27 22:58:34 2023]
+rule finish:
+    input: pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_all_newBalance.zip, pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_refseq_newBalance.zip, pipeline_output/03_output_files/04_zip_archives/streptococcus_pneumoniae_iso_newBalance.zip
+    output: pipeline_output/DONE.txt
+    jobid: 1
+
+[Wed Dec 27 22:58:34 2023]
+Finished job 1.
+36 of 37 steps (97%) done
+
+[Wed Dec 27 22:58:34 2023]
+localrule all:
+    input: pipeline_output/DONE.txt
+    jobid: 0
+
+[Wed Dec 27 22:58:34 2023]
+Finished job 0.
+37 of 37 steps (100%) done
+Complete log: /Users/hy/Documents/GitHub/thesis/data/copy_extract_data/streptococcus_pneumoniae/.snakemake/log/2023-12-27T225504.254383.snakemake.log

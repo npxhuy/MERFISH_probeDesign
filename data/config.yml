@@ -1,0 +1,3 @@
+assembly: 'data'
+genome_fasta:  'data.fna'
+annotation_file:  'data.gtf'

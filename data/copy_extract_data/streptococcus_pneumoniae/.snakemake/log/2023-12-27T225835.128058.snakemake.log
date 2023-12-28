@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Updating job 5 (merge_probes).
+Updating job 6 (gen_refseq_db).
+Updating job 7 (gen_iso_db).
+Updating job 10 (merge_flat_annotations).
+Updating job 13 (gen_refseq_db).
+Creating report...
+Downloading resources and rendering HTML.
+Loading script code for rule gen_refseq_db
+Loading script code for rule gen_iso_db
+Loading script code for rule final_probes
+Loading script code for rule parse_gtf
+Loading script code for rule calc_prob
+Loading script code for rule max_kmer
+Loading script code for rule parse_genome
+Loading script code for rule flatten_isoforms
+Loading script code for rule score
+Loading script code for rule predict_duplex
+Loading script code for rule parse_pairwise
+Report created: pipeline_output/report.html.
