@@ -34,10 +34,21 @@ awk -F'\t' '$3 != "*"' sa_pn_3.sam
 
 
 blastn -db blast/pn -query sa.fasta -word_size 15 -ungapped > sa_pn_blastn_2.txt
-
 #both gapped and ungapped result in the same result, but prob will go for ungapped
 
 # Extract the sequence that matched with the reference genome
 # And filter the sequence that matched with the reference genome against the original fasta file
 # to have the unique non-matching sequence
 grep "Sbjct" -B 2 sa_pn_blastn_2.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - sa.txt > uniq_sa.txt
+
+grep "Sbjct" -B 2 prevotella_bryantii.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - prevotella_bryantii.fasta | grep -v ">" > uniq_prevotella_bryantii.txt
+
+
+
+
+ls | while read folder; do cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../../probes/$folder/$folder.fasta
+
+
+
+ls | while read folder; do blastn -db ../blast_db/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../blastn/$folder/$folder.txt
+
