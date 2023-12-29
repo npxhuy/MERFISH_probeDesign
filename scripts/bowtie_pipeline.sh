@@ -44,7 +44,7 @@ grep "Sbjct" -B 2 sa_pn_blastn_2.txt | grep "Query" | awk '{print $3}' | sort | 
 grep "Sbjct" -B 2 prevotella_bryantii.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - prevotella_bryantii.fasta | grep -v ">" > uniq_prevotella_bryantii.txt
 
 
-
+ls | while read folder; do grep "Sbjct" -B 2 $folder/$folder.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - ../probes/$folder/$folder.fasta | grep -v ">" > ../uniq_probes/uniq_$folder.txt; done
 
 ls | while read folder; do cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../../probes/$folder/$folder.fasta
 
