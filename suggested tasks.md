@@ -57,3 +57,9 @@ MERFISH :  https://www.pnas.org/doi/abs/10.1073/pnas.1912459116     dataset s1 s
 8.1 Add folder with all the  genome files listed in document (point 8). 
  
 9. Collect and compose a list of all bacterial species (with references) that are found in the lung. we need this list as complete as possible to know what potential "double-hits" we have (ie FISH probes designed for one bacterial sequence that targets another nearby species).
+
+10. Generate unique probes using simlar technique as of the 4 in trial run. Aim for 50-80 species.
+
+11.  Find out the position (what mRNA it codes for ) for each unique probe. Once we know what kind protein coding mRNA are targeted can we group them (replication, virulence etc.) In doing that can we compare different species more refined has one more upregulated replication than the other species 
+
+12. (related to 7) how do we know which probes are targeting which mRNA given the output of paintshop ? 
