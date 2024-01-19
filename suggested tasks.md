@@ -62,4 +62,7 @@ MERFISH :  https://www.pnas.org/doi/abs/10.1073/pnas.1912459116     dataset s1 s
 
 11.  Find out the position (what mRNA it codes for ) for each unique probe. Once we know what kind protein coding mRNA are targeted can we group them (replication, virulence etc.) In doing that can we compare different species more refined has one more upregulated replication than the other species 
 
-12. (related to 7) how do we know which probes are targeting which mRNA given the output of paintshop ? 
+12. (related to 7)  how do we know which probes are targeting which mRNA given the output of paintshop  ?
+     In other words: Given the output of paintshop probe generation for a single species. We are expecting several probes per mRNA.
+     is that so? can we double check that. and more generally what mRNAs are targeted with all probes?
+      
