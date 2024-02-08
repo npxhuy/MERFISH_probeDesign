@@ -1,0 +1,23 @@
+{
+"apiVersion": "V2",
+"assemblies": [
+{
+  "files": [
+    {
+      "filePath": "assembly_data_report.jsonl",
+      "fileType": "DATA_REPORT"
+    }
+  ]
+},{
+  "accession": "GCF_000159995.1",
+  "files": [
+    {
+      "filePath": "GCF_000159995.1/GCF_000159995.1_ASM15999v1_genomic.fna",
+      "fileType": "GENOMIC_NUCLEOTIDE_FASTA"
+    },
+    {
+      "filePath": "GCF_000159995.1/genomic.gtf",
+      "fileType": "GTF"
+    }
+  ]
+}]}

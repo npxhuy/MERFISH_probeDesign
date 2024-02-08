@@ -13,7 +13,7 @@ source activate paintshop_snakemake
 # For the lunarc version, this does not require to go to the folder containing the data, cause we have flag to show the directory
 cd ..
 ls
-cd data/copy_extract_data
+cd data/extract_data
 ls | while read folder; do
   
   cd $folder
@@ -32,21 +32,15 @@ ls | while read folder; do
   # Run PaintSHOP pipeline
   # configure file paths
   CONFIG_FILE='config.yml'  
-  SNAKE_FILE='../../../PaintSHOP_pipeline/workflow/Snakefile'
-  CONDA_ENVS='../../../PaintSHOP_pipeline/shared_conda_envs'
+  SNAKE_FILE='../../../paintshop/PaintSHOP_pipeline/workflow/Snakefile'
+  CONDA_ENVS='../../../paintshop/PaintSHOP_pipeline/shared_conda_envs'
   
   # run the pipeline
-  snakemake --configfile config.yml --snakefile $SNAKE_FILE --use-conda --conda-prefix $CONDA_ENVS --cores --restart-times 3
-  
-  # export PDF and svg visualizations of the DAG structure of pipeline steps
-  echo -e "Exporting pipeline DAG to svg and pdf..."
-  snakemake --configfile config.yml --snakefile $SNAKE_FILE --dag > dag.dot
-  dot -Tpdf dag.dot > pipeline_output/pipeline.pdf
-  dot -Tsvg dag.dot > pipeline_output/pipeline.svg
-  rm dag.dot
-  
-  echo -e "Generating pipeline HTML report..."
-  snakemake --snakefile $SNAKE_FILE --configfile $CONFIG_FILE --report pipeline_output/report.html --conda-frontend mamba
+
 
   cd ..
 done
+
+
+module load Anaconda3
+source activate /home/npxhuy/.conda/envs/base1/envs/paintshop_snakemake
