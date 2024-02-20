@@ -66,3 +66,11 @@ MERFISH :  https://www.pnas.org/doi/abs/10.1073/pnas.1912459116     dataset s1 s
      In other words: Given the output of paintshop probe generation for a single species. We are expecting several probes per mRNA.
      is that so? can we double check that. and more generally what mRNAs are targeted with all probes?
       
+13. Add more info in the introduction for (F)ISH and ISS. Next add a section for the overhang design   explain where the error robustness in MERFISH comes from. 
+
+14. Try to find a general probe set with existing targets in all microbes. 
+
+15.  Visualize how the number of unique probes change with chainging number of bases "probe matching criteria".
+
+16.  gene description and gene type for all unique probes. We have redundancy for some of the species with 1000s of unique probes how do we choose the 100 best? helps by knowing what protein coding sequence that are targeted. etc. of course useful for other studies later on.  
+17.   
