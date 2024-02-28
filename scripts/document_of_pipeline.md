@@ -90,7 +90,7 @@ Filter the file, and wrote it as a fasta file cause blastn want it fasta
 
 `ls | while read folder; do mkdir ../../blastn/$folder; done`
 
-Run blastn on the db
+Run blastn on the db, probes directory 
 
 On the server it took about 4 hour for 58 samples, take it into account when writing time
 `ls | while read folder; do blastn -db ../blast_db/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../blastn/$folder/$folder.txt`
@@ -112,25 +112,39 @@ input requires three files: the original gtf, the paintshop result, and the uniq
 `grep -f probes.txt paintshop_fc.tsv  | cut -f 1,2,3 > ../../02_intermediate/fc/location.txt`
 
 10.2 Parse the important info from gtf file
-`awk -F'\t' '$3 == "CDS"' ap.gtf | cut -f1,4,5,9 | cut -d";" -f1` 
+`awk -F'\t' '$3 == "CDS"' ap.gtf | cut -f1,4,5,9 | h` 
 
 
 FOR LOOP 10.1
 
-`cat finish_microbe.txt | while read name; do mkdir find_gene_id/$name; grep -f uniq_probes/uniq_$name.txt extract_data/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f 1,2,3 > find_gene_id/$name/probe_location_$name.txt`
+`cat finish_microbe.txt | while read name; do mkdir find_gene_id_2/$name; grep -f uniq_probes/uniq_$name.txt extract_data/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f 1,2,3 | sort -t$'\t' -k1,1 -k2,2n > find_gene_id_sorted/$name/probe_location_$name.txt`
 
 alcanivorax_profundi
 campylobacter_troglodytis
 methylobacterium_isbiliense
 streptococcus_phocae
 
-`cat finish_unfinish_microbe.txt | while read name; do grep -f uniq_probes/uniq_$name.txt unfishish_extract_data/$name_*Balance.tsv | cut -f 1,2,3 > find_gene_id/$name/probe_location_$name.txt; done` error in file but only 4 files, so can be handle manually
+`cat finish_unfinish_microbe.txt | while read name; do mkdir grep -f uniq_probes/uniq_$name.txt unfishish_extract_data/$name_*Balance.tsv | cut -f 1,2,3 | cut -d ":" -f 2 | sort -t$'\t' -k1,1 -k2,2n > find_gene_id_sorted/$name/probe_location_$name.txt; done`
 
-cut -d ":" -f 2 probe_location_streptococcus_phocae.txt > temp.txt; rm probe_location_streptococcus_phocae.txt ; mv temp.txt probe_location_streptococcus_phocae.txt
 
-FOR LOOP 10.2
+FOR LOOP 10.2, run in find_gene_id_sorted folder
 
-`ls | while read name; do awk -F'\t' '$3 == "CDS"' ../extract_data/$name/$name.gtf | cut -f1,4,5,9 | cut -d";" -f1 > $name/filter_$name.gtf; done`
+`ls | while read name; do awk -F'\t' '$3 == "CDS"' ../extract_data/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n  > $name/filter_$name.gtf; done`
 
-Run the python script
-`ls | while read name; do python3 ../../02_scripts/extract_gene_id.py $name/filter_$name.gtf $name/probe_location_$name.txt $name/gene_id_$name.txt; done`
+Run the python script (copilot_extract_gene_id)
+
+`ls | while read name; do python3 ../../02_scripts/copilot_extract_gene_id.py $name/filter_$name.gtf $name/probe_location_$name.txt $name/gene_id_$name.txt; done`
+
+### Do that again
+
+`cat finish_microbe.txt | while read name; do mkdir find_gene_id_GENEID/$name; grep -f uniq_probes/uniq_$name.txt extract_data/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f 1,2,3 > find_gene_id_GENEID/$name/probe_location_$name.txt`
+
+
+`cat finish_unfinish_microbe.txt | while read name; do mkdir find_gene_id_GENEID/$name; grep -f uniq_probes/uniq_$name.txt unfishish_extract_data/$name_*Balance.tsv | cut -f 1,2,3 > find_gene_id_GENEID/$name/probe_location_$name.txt; done`
+###
+
+Find the universal probes
+- Through blastn result, find all the matches and remove the none matches (opposite to what we did before)
+`ls | while read folder; do grep "Sbjct" -B 2 $folder/$folder.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -f - ../probes/$folder/$folder.fasta | grep -v ">" > ../univ_probes/univ_$folder.txt; done`
+- 
+

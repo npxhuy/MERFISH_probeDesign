@@ -6,6 +6,7 @@ awk '{print ">\n"$0}' filename > newfile
 # Create bowtie2 index
 bowtie2-build pn.fna bowtie2/pn
 
+
 # Align reads to reference genome
 # end to end alignment as default mode
 bowtie2 -f --local -D 15 -R 2 -N 1 -L 15 -i S,1,0.75 -x bowtie2/pn -U sa.fasta -S sa_pn_3.sam
