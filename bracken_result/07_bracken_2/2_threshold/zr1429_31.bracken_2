@@ -1,0 +1,85 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	8761	17201	25962	0.28914
+Propionibacterium freudenreichii	1744	S	5	139	144	0.00160
+Actinomyces sp. oral taxon 414	712122	S	2933	8999	11932	0.13289
+Actinomyces massiliensis	461393	S	47	0	47	0.00052
+Actinomyces respiraculi	2744574	S	8	90	98	0.00109
+Actinomyces israelii	1659	S	4	0	4	0.00004
+Actinomyces trachealis	2763540	S	3	28	31	0.00035
+Schaalia meyeri	52773	S	266	1340	1606	0.01789
+Pauljensenia hongkongensis	178339	S	6	13	19	0.00021
+Corynebacterium matruchotii	43768	S	9098	233	9331	0.10392
+Corynebacterium durum	61592	S	11	0	11	0.00012
+Rhodococcus opacus	37919	S	8	0	8	0.00009
+Streptomyces sp. CGMCC 4.1456	3074897	S	3	0	3	0.00003
+Streptomyces malaysiensis	92644	S	2	0	2	0.00002
+Bifidobacterium adolescentis	1680	S	2	0	2	0.00002
+Olsenella sp. oral taxon 807	712411	S	10	15	25	0.00028
+Lancefieldella parvula	1382	S	4	0	4	0.00004
+Blautia argi	1912897	S	1990	5146	7136	0.07947
+Lachnoanaerobaculum gingivalis	2490855	S	743	0	743	0.00827
+Butyrivibrio crossotus	45851	S	16	223	239	0.00266
+Stomatobaculum sp. F0698	3059030	S	2	0	2	0.00002
+Peptostreptococcus sp. CBA3647	3003601	S	135	0	135	0.00150
+Clostridioides difficile	1496	S	8	5042	5050	0.05624
+Hungatella hathewayi	154046	S	18	19	37	0.00041
+Clostridium perfringens	1502	S	8	12	20	0.00022
+Selenomonas sp. oral taxon 920	1884263	S	1689	2278	3967	0.04418
+Selenomonas sp. oral taxon 478	712538	S	3	2	5	0.00006
+Selenomonas sputigena	69823	S	63	25	88	0.00098
+Selenomonas dianae	135079	S	39	0	39	0.00043
+Veillonella rogosae	423477	S	3	1923	1926	0.02145
+Streptococcus agalactiae	1311	S	5	869	874	0.00973
+Streptococcus oralis	1303	S	2	45	47	0.00052
+Streptococcus sanguinis	1305	S	2	15	17	0.00019
+Streptococcus suis	1307	S	2	19	21	0.00023
+Streptococcus mutans	1309	S	2	11	13	0.00014
+Lacticaseibacillus paracasei	1597	S	2	201	203	0.00226
+Gemella haemolysans	1379	S	126	64	190	0.00212
+Gemella morbillorum	29391	S	28	38	66	0.00074
+Caldalkalibacillus thermarum	296745	S	2	2	4	0.00004
+Staphylococcus aureus	1280	S	2	8	10	0.00011
+Anaerococcus sp. Marseille-Q7828	3036300	S	6	0	6	0.00007
+Prevotella nigrescens	28133	S	295	2224	2519	0.02805
+Prevotella sp. oral taxon 299	652716	S	107	58	165	0.00184
+Prevotella sp. oral taxon 475	712471	S	20	210	230	0.00256
+Prevotella multiformis	282402	S	25	89	114	0.00127
+Prevotella denticola	28129	S	2	9	11	0.00012
+Prevotella intermedia	28131	S	2	7	9	0.00010
+Segatella oris	28135	S	131	312	443	0.00493
+Hoylesella buccalis	28127	S	3	4	7	0.00008
+Hoylesella enoeca	76123	S	3	8	11	0.00012
+Tannerella serpentiformis	712710	S	757	339	1096	0.01221
+Porphyromonas sp. oral taxon 275	712435	S	177	14	191	0.00213
+Porphyromonas gingivalis	837	S	2	9	11	0.00012
+Candidatus Azobacteroides pseudotrichonymphae	511435	S	4	0	4	0.00004
+Sodaliphilus pleomorphus	2606626	S	4	3	7	0.00008
+Bacteroides ovatus	28116	S	2	48	50	0.00056
+Capnocytophaga sp. FDAARGOS_737	2545799	S	11	519	530	0.00590
+Capnocytophaga sputigena	1019	S	43	876	919	0.01023
+Capnocytophaga leadbetteri	327575	S	19	855	874	0.00973
+Epilithonimonas zeae	1416779	S	13	2	15	0.00017
+Chryseobacterium sp. CY350	2997336	S	3	0	3	0.00003
+Cardiobacterium sp. Marseille-Q4385	2866573	S	600	1681	2281	0.02540
+Cardiobacterium hominis	2718	S	292	689	981	0.01093
+Aggregatibacter sp. 2125159857	2820817	S	27	433	460	0.00512
+Ottowia sp. oral taxon 894	1658672	S	4	467	471	0.00525
+Neisseria elongata	495	S	52	566	618	0.00688
+Candidatus Nasuia deltocephalinicola	1160784	S	2	0	2	0.00002
+Fusobacterium animalis	76859	S	17	283	300	0.00334
+Fusobacterium hwasookii	1583098	S	17	2930	2947	0.03282
+Fusobacterium nucleatum	851	S	6	231	237	0.00264
+Fusobacterium canifelinum	285729	S	6	411	417	0.00464
+Fusobacterium vincentii	155615	S	5	303	308	0.00343
+Fusobacterium pseudoperiodonticum	2663009	S	4	235	239	0.00266
+Fusobacterium varium	856	S	2	9	11	0.00012
+Leptotrichia buccalis	40542	S	36	11	47	0.00052
+Leptotrichia wadei	157687	S	19	5	24	0.00027
+Leptotrichia trevisanii	109328	S	2	0	2	0.00002
+Candidatus Saccharimonas aalborgensis	1332188	S	1114	26	1140	0.01270
+Candidatus Nanosynbacter lyticus	2093824	S	22	380	402	0.00448
+Candidatus Mycosynbacter amalyticus	2665156	S	780	36	816	0.00909
+Treponema socranskii	53419	S	292	198	490	0.00546
+Treponema vincentii	69710	S	37	102	139	0.00155
+Silvanigrella aquatica	1915309	S	2	0	2	0.00002
+Homo sapiens	9606	S	146	0	146	0.00163

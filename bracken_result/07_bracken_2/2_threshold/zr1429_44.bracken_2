@@ -1,0 +1,35 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	27201	19793	46994	0.66834
+Cutibacterium granulosum	33011	S	3903	3076	6979	0.09925
+Cutibacterium modestum	2559073	S	1621	2208	3829	0.05446
+Tessaracoccus flavescens	399497	S	7	0	7	0.00010
+Tropheryma whipplei	2039	S	4159	0	4159	0.05915
+Arthrobacter sp. Helios	2828862	S	2	485	487	0.00693
+Corynebacterium glutamicum	1718	S	3	397	400	0.00569
+Actinomyces massiliensis	461393	S	16	0	16	0.00023
+Schaalia meyeri	52773	S	6	67	73	0.00104
+Streptomyces sp. NA02536	2742133	S	3	1	4	0.00006
+Streptomyces sp. CGMCC 4.1456	3074897	S	2	0	2	0.00003
+Streptococcus agalactiae	1311	S	26	4121	4147	0.05898
+Streptococcus oralis	1303	S	10	173	183	0.00260
+Streptococcus pyogenes	1314	S	8	148	156	0.00222
+Streptococcus parasuis	1501662	S	3	125	128	0.00182
+Streptococcus mutans	1309	S	3	14	17	0.00024
+Streptococcus thermophilus	1308	S	3	46	49	0.00070
+Streptococcus sanguinis	1305	S	3	15	18	0.00026
+Streptococcus suis	1307	S	2	60	62	0.00088
+Streptococcus pneumoniae	1313	S	2	856	858	0.01220
+Streptococcus gordonii	1302	S	2	9	11	0.00016
+Streptococcus infantis	68892	S	2	19	21	0.00030
+Dolosigranulum pigrum	29394	S	161	125	286	0.00407
+Gemella haemolysans	1379	S	158	128	286	0.00407
+Gemella sanguinis	84135	S	31	27	58	0.00082
+Staphylococcus aureus	1280	S	9	218	227	0.00323
+Staphylococcus epidermidis	1282	S	3	5	8	0.00011
+Bacillus velezensis	492670	S	2	74	76	0.00108
+Fictibacillus phosphorivorans	1221500	S	2	0	2	0.00003
+Parvimonas micra	33033	S	20	56	76	0.00108
+Acinetobacter baumannii	470	S	3	351	354	0.00503
+Prevotella histicola	470565	S	3	61	64	0.00091
+Luteitalea pratensis	1855912	S	2	0	2	0.00003
+Homo sapiens	9606	S	263	0	263	0.00374

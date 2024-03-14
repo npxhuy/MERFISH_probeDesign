@@ -1,0 +1,4 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	601	1447	2048	0.93773
+Actinomyces sp. oral taxon 414	712122	S	29	20	49	0.02244
+Bacillus cereus	1396	S	8	78	86	0.03938

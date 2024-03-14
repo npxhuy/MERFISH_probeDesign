@@ -1,0 +1,46 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus mutans	1309	S	121	535	656	0.00826
+Streptococcus agalactiae	1311	S	109	15294	15403	0.19405
+Streptococcus sanguinis	1305	S	20	112	132	0.00166
+Streptococcus oralis	1303	S	16	269	285	0.00359
+Streptococcus parasuis	1501662	S	13	630	643	0.00810
+Streptococcus pyogenes	1314	S	12	218	230	0.00290
+Streptococcus anginosus	1328	S	10	964	974	0.01227
+Streptococcus suis	1307	S	8	97	105	0.00132
+Streptococcus gordonii	1302	S	8	49	57	0.00072
+Streptococcus infantis	68892	S	7	60	67	0.00084
+Streptococcus thermophilus	1308	S	6	136	142	0.00179
+Latilactobacillus sakei	1599	S	8	80	88	0.00111
+Gemella sanguinis	84135	S	3397	1945	5342	0.06730
+Gemella haemolysans	1379	S	2185	1090	3275	0.04126
+Staphylococcus aureus	1280	S	61	879	940	0.01184
+Staphylococcus epidermidis	1282	S	22	76	98	0.00123
+Staphylococcus hominis	1290	S	5	6	11	0.00014
+Listeria monocytogenes	1639	S	5	1061	1066	0.01343
+Lachnoanaerobaculum gingivalis	2490855	S	453	0	453	0.00571
+Peptostreptococcus sp. CBA3647	3003601	S	391	0	391	0.00493
+Cutibacterium acnes	1747	S	5438	4878	10316	0.12996
+Cutibacterium granulosum	33011	S	2814	2918	5732	0.07221
+Schaalia meyeri	52773	S	37	5240	5277	0.06648
+Actinomyces sp. oral taxon 414	712122	S	241	692	933	0.01175
+Bifidobacterium adolescentis	1680	S	7	0	7	0.00009
+Fusobacterium pseudoperiodonticum	2663009	S	19	2288	2307	0.02906
+Fusobacterium polymorphum	76857	S	16	3012	3028	0.03815
+Fusobacterium animalis	76859	S	8	275	283	0.00357
+Fusobacterium hwasookii	1583098	S	7	4456	4463	0.05623
+Neisseria gonorrhoeae	485	S	7	2514	2521	0.03176
+Alysiella crassa	153491	S	6	959	965	0.01216
+Burkholderia mallei	13373	S	5	3018	3023	0.03808
+Haemophilus parainfluenzae	729	S	183	618	801	0.01009
+Haemophilus parahaemolyticus	735	S	150	517	667	0.00840
+Stenotrophomonas maltophilia	40324	S	23	106	129	0.00163
+Prevotella sp. oral taxon 299	652716	S	189	794	983	0.01238
+Prevotella denticola	28129	S	11	202	213	0.00268
+Prevotella melaninogenica	28132	S	8	106	114	0.00144
+Porphyromonas sp. oral taxon 275	712435	S	179	17	196	0.00247
+Capnocytophaga gingivalis	1017	S	8	960	968	0.01219
+Chryseobacterium sp. CY350	2997336	S	124	0	124	0.00156
+Hymenobacter sp. YIM 151500-1	2987689	S	8	434	442	0.00557
+Rufibacter radiotolerans	1379910	S	5	7	12	0.00015
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	1007	2138	3145	0.03962
+Homo sapiens	9606	S	2351	0	2351	0.02962

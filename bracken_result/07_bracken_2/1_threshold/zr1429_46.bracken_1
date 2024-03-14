@@ -1,0 +1,37 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	1477	1112	2589	0.29694
+Schaalia meyeri	52773	S	16	1117	1133	0.12995
+Corynebacterium durum	61592	S	58	0	58	0.00665
+Corynebacterium xerosis	1725	S	2	23	25	0.00287
+Streptococcus gordonii	1302	S	3	192	195	0.02236
+Streptococcus oralis	1303	S	2	563	565	0.06480
+Streptococcus thermophilus	1308	S	2	256	258	0.02959
+Streptococcus parasuis	1501662	S	1	556	557	0.06388
+Streptococcus pyogenes	1314	S	1	290	291	0.03338
+Gemella sanguinis	84135	S	964	85	1049	0.12031
+Gemella haemolysans	1379	S	21	1	22	0.00252
+Bacillus cereus	1396	S	1	0	1	0.00011
+Bacillus velezensis	492670	S	1	8	9	0.00103
+Paenibacillus physcomitrellae	1619311	S	1	0	1	0.00011
+Peptostreptococcus sp. CBA3647	3003601	S	162	0	162	0.01858
+Stomatobaculum sp. F0698	3059030	S	44	0	44	0.00505
+Candidatus Desulforudis audaxviator	471827	S	1	23	24	0.00275
+Selenomonas sp. oral taxon 920	1884263	S	31	93	124	0.01422
+Parvimonas micra	33033	S	1	1	2	0.00023
+Acinetobacter haemolyticus	29430	S	3	329	332	0.03808
+Haemophilus parainfluenzae	729	S	108	101	209	0.02397
+Haemophilus parahaemolyticus	735	S	29	18	47	0.00539
+Citrobacter werkmanii	67827	S	1	0	1	0.00011
+Klebsiella pneumoniae	573	S	1	4	5	0.00057
+Salmonella enterica	28901	S	1	63	64	0.00734
+Providencia rettgeri	587	S	1	0	1	0.00011
+Stenotrophomonas maltophilia	40324	S	4	0	4	0.00046
+Alteromonas macleodii	28108	S	1	0	1	0.00011
+Vibrio cholerae	666	S	1	0	1	0.00011
+Aeromonas veronii	654	S	1	0	1	0.00011
+Burkholderia mallei	13373	S	1	114	115	0.01319
+Candidatus Liberibacter africanus	34020	S	1	65	66	0.00757
+Fusobacterium hwasookii	1583098	S	1	530	531	0.06090
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	135	59	194	0.02225
+Coprothermobacter proteolyticus	35786	S	1	0	1	0.00011
+Homo sapiens	9606	S	25	0	25	0.00287

@@ -1,0 +1,9 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	4992	4578	9570	0.82650
+Mammaliicoccus sciuri	1296	S	2	13	15	0.00130
+Burkholderia mallei	13373	S	10	719	729	0.06296
+Acinetobacter baumannii	470	S	2	415	417	0.03601
+Escherichia coli	562	S	3	29	32	0.00276
+Salmonella enterica	28901	S	3	393	396	0.03420
+Stenotrophomonas maltophilia	40324	S	13	11	24	0.00207
+Chryseobacterium manosquense	2754694	S	5	386	391	0.03377

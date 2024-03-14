@@ -1,0 +1,28 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	7037	5313	12350	0.21995
+Cutibacterium granulosum	33011	S	4179	6500	10679	0.19019
+Schaalia meyeri	52773	S	10	2566	2576	0.04588
+Actinobaculum sp. 313	2495645	S	61	425	486	0.00866
+Changpingibacter yushuensis	2758440	S	12	68	80	0.00142
+Trueperella pyogenes	1661	S	11	70	81	0.00144
+Corynebacterium glutamicum	1718	S	7	48	55	0.00098
+Streptomyces sp. NA02536	2742133	S	9	26	35	0.00062
+Streptomyces sp. CGMCC 4.1456	3074897	S	9	0	9	0.00016
+Streptococcus agalactiae	1311	S	55	8908	8963	0.15963
+Streptococcus thermophilus	1308	S	34	736	770	0.01371
+Streptococcus pyogenes	1314	S	28	563	591	0.01053
+Streptococcus suis	1307	S	19	373	392	0.00698
+Streptococcus parasuis	1501662	S	15	767	782	0.01393
+Streptococcus oralis	1303	S	14	276	290	0.00516
+Streptococcus sanguinis	1305	S	14	87	101	0.00180
+Streptococcus pneumoniae	1313	S	10	8203	8213	0.14627
+Streptococcus anginosus	1328	S	9	2984	2993	0.05330
+Streptococcus infantis	68892	S	7	74	81	0.00144
+Streptococcus urinalis	149016	S	6	47	53	0.00094
+Streptococcus salivarius	1304	S	5	186	191	0.00340
+Streptococcus dysgalactiae	1334	S	5	1805	1810	0.03224
+Lactobacillus gasseri	1596	S	9	88	97	0.00173
+Latilactobacillus sakei	1599	S	6	102	108	0.00192
+Gemella haemolysans	1379	S	1798	996	2794	0.04976
+Burkholderia contaminans	488447	S	33	1493	1526	0.02718
+Stenotrophomonas maltophilia	40324	S	9	21	30	0.00053

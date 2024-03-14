@@ -1,0 +1,44 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus agalactiae	1311	S	34	18883	18917	0.31044
+Streptococcus pyogenes	1314	S	21	1244	1265	0.02076
+Streptococcus suis	1307	S	19	696	715	0.01173
+Streptococcus oralis	1303	S	18	1071	1089	0.01787
+Streptococcus thermophilus	1308	S	15	846	861	0.01413
+Streptococcus gordonii	1302	S	14	267	281	0.00461
+Streptococcus infantis	68892	S	13	408	421	0.00691
+Streptococcus parasuis	1501662	S	11	1605	1616	0.02652
+Streptococcus sanguinis	1305	S	8	149	157	0.00258
+Granulicatella elegans	137732	S	10	671	681	0.01118
+Gemella sanguinis	84135	S	4319	990	5309	0.08712
+Gemella haemolysans	1379	S	208	44	252	0.00414
+Stomatobaculum sp. F0698	3059030	S	897	0	897	0.01472
+Lachnoanaerobaculum gingivalis	2490855	S	483	0	483	0.00793
+Mogibacterium diversum	114527	S	829	532	1361	0.02233
+Peptostreptococcus sp. CBA3647	3003601	S	250	0	250	0.00410
+Veillonella atypica	39777	S	38	1551	1589	0.02608
+Megasphaera stantonii	2144175	S	60	48	108	0.00177
+Selenomonas sputigena	69823	S	19	472	491	0.00806
+Bulleidia sp. zg-1006	2806552	S	989	155	1144	0.01877
+Parvimonas micra	33033	S	179	113	292	0.00479
+Schaalia meyeri	52773	S	25	16504	16529	0.27125
+Tropheryma whipplei	2039	S	10	0	10	0.00016
+Cutibacterium acnes	1747	S	367	1224	1591	0.02611
+Cutibacterium granulosum	33011	S	9	99	108	0.00177
+Corynebacterium kroppenstedtii	161879	S	9	54	63	0.00103
+Lancefieldella parvula	1382	S	322	8	330	0.00542
+Lancefieldella sp. Marseille-Q7238	3022127	S	103	0	103	0.00169
+Olsenella uli	133926	S	25	0	25	0.00041
+Prevotella sp. oral taxon 299	652716	S	625	559	1184	0.01943
+Prevotella histicola	470565	S	175	334	509	0.00835
+Prevotella multiformis	282402	S	43	228	271	0.00445
+Prevotella nigrescens	28133	S	33	189	222	0.00364
+Prevotella denticola	28129	S	13	51	64	0.00105
+Prevotella melaninogenica	28132	S	8	23	31	0.00051
+Segatella oris	28135	S	39	53	92	0.00151
+Hoylesella enoeca	76123	S	12	24	36	0.00059
+Porphyromonas sp. oral taxon 275	712435	S	443	7	450	0.00738
+Porphyromonas endodontalis	28124	S	62	25	87	0.00143
+Tannerella serpentiformis	712710	S	36	7	43	0.00071
+Leptotrichia wadei	157687	S	8	0	8	0.00013
+Haemophilus parainfluenzae	729	S	673	50	723	0.01186
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	177	85	262	0.00430

@@ -1,0 +1,20 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	601	1438	2039	0.67718
+Agromyces mangrovi	1858653	S	1	0	1	0.00033
+Janibacter indicus	857417	S	2	48	50	0.01661
+Actinomyces sp. oral taxon 414	712122	S	29	16	45	0.01495
+Staphylococcus aureus	1280	S	7	58	65	0.02159
+Bacillus cereus	1396	S	8	37	45	0.01495
+Neobacillus sp. OS1-33	3070683	S	1	0	1	0.00033
+Fictibacillus phosphorivorans	1221500	S	1	0	1	0.00033
+Lysinibacillus sp. GJ-1	2896845	S	1	1	2	0.00066
+Limosilactobacillus fermentum	1613	S	1	0	1	0.00033
+Burkholderia mallei	13373	S	1	275	276	0.09166
+Burkholderia pseudomallei	28450	S	1	31	32	0.01063
+Burkholderia contaminans	488447	S	1	23	24	0.00797
+Acinetobacter sp. 16	3081771	S	1	0	1	0.00033
+Acinetobacter sp. LoGeW2-3	1808001	S	1	8	9	0.00299
+Acinetobacter baumannii	470	S	2	349	351	0.11657
+Stenotrophomonas maltophilia	40324	S	1	53	54	0.01793
+Vibrio coralliilyticus	190893	S	2	2	4	0.00133
+Legionella geestiana	45065	S	1	0	1	0.00033

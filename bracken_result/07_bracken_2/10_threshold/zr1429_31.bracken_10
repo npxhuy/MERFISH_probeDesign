@@ -1,0 +1,43 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	8761	17401	26162	0.30396
+Actinomyces sp. oral taxon 414	712122	S	2933	9133	12066	0.14019
+Actinomyces massiliensis	461393	S	47	0	47	0.00055
+Schaalia meyeri	52773	S	266	1343	1609	0.01869
+Corynebacterium matruchotii	43768	S	9098	256	9354	0.10868
+Corynebacterium durum	61592	S	11	0	11	0.00013
+Olsenella sp. oral taxon 807	712411	S	10	15	25	0.00029
+Blautia argi	1912897	S	1990	9772	11762	0.13665
+Lachnoanaerobaculum gingivalis	2490855	S	743	0	743	0.00863
+Butyrivibrio crossotus	45851	S	16	458	474	0.00551
+Peptostreptococcus sp. CBA3647	3003601	S	135	0	135	0.00157
+Hungatella hathewayi	154046	S	18	76	94	0.00109
+Selenomonas sp. oral taxon 920	1884263	S	1689	2286	3975	0.04618
+Selenomonas sputigena	69823	S	63	25	88	0.00102
+Selenomonas dianae	135079	S	39	0	39	0.00045
+Gemella haemolysans	1379	S	126	74	200	0.00232
+Gemella morbillorum	29391	S	28	46	74	0.00086
+Prevotella nigrescens	28133	S	295	2283	2578	0.02995
+Prevotella sp. oral taxon 299	652716	S	107	60	167	0.00194
+Prevotella sp. oral taxon 475	712471	S	20	211	231	0.00268
+Prevotella multiformis	282402	S	25	90	115	0.00134
+Segatella oris	28135	S	131	324	455	0.00529
+Tannerella serpentiformis	712710	S	757	357	1114	0.01294
+Porphyromonas sp. oral taxon 275	712435	S	177	16	193	0.00224
+Capnocytophaga sp. FDAARGOS_737	2545799	S	11	519	530	0.00616
+Capnocytophaga sputigena	1019	S	43	876	919	0.01068
+Capnocytophaga leadbetteri	327575	S	19	855	874	0.01015
+Epilithonimonas zeae	1416779	S	13	2	15	0.00017
+Cardiobacterium sp. Marseille-Q4385	2866573	S	600	1683	2283	0.02652
+Cardiobacterium hominis	2718	S	292	690	982	0.01141
+Aggregatibacter sp. 2125159857	2820817	S	27	434	461	0.00536
+Neisseria elongata	495	S	52	579	631	0.00733
+Fusobacterium animalis	76859	S	17	389	406	0.00472
+Fusobacterium hwasookii	1583098	S	17	4017	4034	0.04687
+Leptotrichia buccalis	40542	S	36	12	48	0.00056
+Leptotrichia wadei	157687	S	19	6	25	0.00029
+Candidatus Saccharimonas aalborgensis	1332188	S	1114	26	1140	0.01324
+Candidatus Nanosynbacter lyticus	2093824	S	22	381	403	0.00468
+Candidatus Mycosynbacter amalyticus	2665156	S	780	36	816	0.00948
+Treponema socranskii	53419	S	292	199	491	0.00570
+Treponema vincentii	69710	S	37	103	140	0.00163
+Homo sapiens	9606	S	146	0	146	0.00170

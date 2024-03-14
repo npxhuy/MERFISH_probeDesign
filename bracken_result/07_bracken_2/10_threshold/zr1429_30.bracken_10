@@ -1,0 +1,33 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus cristatus	45634	S	1163	10520	11683	0.13267
+Streptococcus pyogenes	1314	S	58	1737	1795	0.02038
+Streptococcus oralis	1303	S	24	721	745	0.00846
+Streptococcus thermophilus	1308	S	23	709	732	0.00831
+Streptococcus suis	1307	S	21	938	959	0.01089
+Streptococcus agalactiae	1311	S	18	4721	4739	0.05381
+Streptococcus infantis	68892	S	16	252	268	0.00304
+Streptococcus sanguinis	1305	S	11	105	116	0.00132
+Streptococcus parasuis	1501662	S	11	834	845	0.00960
+Streptococcus gordonii	1302	S	11	109	120	0.00136
+Streptococcus urinalis	149016	S	10	115	125	0.00142
+Streptococcus anginosus	1328	S	10	3774	3784	0.04297
+Gemella haemolysans	1379	S	4311	726	5037	0.05720
+Gemella morbillorum	29391	S	3266	1066	4332	0.04919
+Gemella sanguinis	84135	S	1811	437	2248	0.02553
+Parvimonas micra	33033	S	9682	860	10542	0.11971
+Stomatobaculum sp. F0698	3059030	S	771	0	771	0.00876
+Mogibacterium diversum	114527	S	1802	3825	5627	0.06390
+Candidatus Desulforudis audaxviator	471827	S	170	91	261	0.00296
+Selenomonas sp. oral taxon 920	1884263	S	13	2	15	0.00017
+Bulleidia sp. zg-1006	2806552	S	843	28	871	0.00989
+Cutibacterium acnes	1747	S	4557	3332	7889	0.08958
+Cutibacterium modestum	2559073	S	2003	2787	4790	0.05439
+Schaalia meyeri	52773	S	786	6719	7505	0.08522
+Lancefieldella parvula	1382	S	60	3	63	0.00072
+Fusobacterium polymorphum	76857	S	14	9328	9342	0.10608
+Prevotella histicola	470565	S	175	227	402	0.00456
+Prevotella sp. oral taxon 299	652716	S	15	10	25	0.00028
+Segatella oris	28135	S	492	650	1142	0.01297
+Chryseobacterium sp. CY350	2997336	S	12	0	12	0.00014
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	171	1028	1199	0.01362
+Stenotrophomonas maltophilia	40324	S	10	54	64	0.00073

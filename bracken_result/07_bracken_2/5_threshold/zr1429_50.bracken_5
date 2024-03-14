@@ -1,0 +1,45 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	10915	4778	15693	0.20799
+Cutibacterium modestum	2559073	S	2260	1898	4158	0.05511
+Schaalia meyeri	52773	S	5	13845	13850	0.18356
+Actinomyces sp. oral taxon 414	712122	S	84	1529	1613	0.02138
+Changpingibacter yushuensis	2758440	S	6	14	20	0.00027
+Tropheryma whipplei	2039	S	12203	0	12203	0.16173
+Slackia heliotrinireducens	84110	S	22	187	209	0.00277
+Lancefieldella parvula	1382	S	147	9	156	0.00207
+Streptococcus agalactiae	1311	S	18	8899	8917	0.11818
+Streptococcus thermophilus	1308	S	17	636	653	0.00865
+Streptococcus oralis	1303	S	11	571	582	0.00771
+Streptococcus suis	1307	S	8	333	341	0.00452
+Streptococcus sanguinis	1305	S	7	106	113	0.00150
+Streptococcus pyogenes	1314	S	7	376	383	0.00508
+Streptococcus sp. LPB0220	2610896	S	5	189	194	0.00257
+Gemella haemolysans	1379	S	2335	709	3044	0.04034
+Gemella sanguinis	84135	S	450	162	612	0.00811
+Staphylococcus aureus	1280	S	7	37	44	0.00058
+Bacillus velezensis	492670	S	5	175	180	0.00239
+Lachnoanaerobaculum gingivalis	2490855	S	2187	0	2187	0.02899
+Stomatobaculum sp. F0698	3059030	S	621	0	621	0.00823
+Peptostreptococcus sp. CBA3647	3003601	S	233	0	233	0.00309
+Filifactor alocis	143361	S	27	62	89	0.00118
+Mogibacterium diversum	114527	S	14	120	134	0.00178
+Veillonella atypica	39777	S	72	2102	2174	0.02881
+Megasphaera stantonii	2144175	S	96	33	129	0.00171
+Dialister pneumosintes	39950	S	24	0	24	0.00032
+Bulleidia sp. zg-1006	2806552	S	1197	174	1371	0.01817
+Prevotella sp. oral taxon 299	652716	S	572	1142	1714	0.02272
+Prevotella sp. oral taxon 475	712471	S	360	785	1145	0.01518
+Prevotella dentalis	52227	S	50	111	161	0.00213
+Prevotella histicola	470565	S	22	64	86	0.00114
+Prevotella melaninogenica	28132	S	10	54	64	0.00085
+Segatella oris	28135	S	72	164	236	0.00313
+Porphyromonas endodontalis	28124	S	595	123	718	0.00952
+Porphyromonas sp. oral taxon 275	712435	S	24	0	24	0.00032
+Tannerella serpentiformis	712710	S	67	6	73	0.00097
+Leptotrichia wadei	157687	S	30	0	30	0.00040
+Xanthomonas albilineans	29447	S	155	86	241	0.00319
+Thermomonas sp. XSG	2771436	S	36	34	70	0.00093
+Haemophilus parainfluenzae	729	S	177	181	358	0.00474
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	360	179	539	0.00714
+Treponema vincentii	69710	S	13	1	14	0.00019
+Homo sapiens	9606	S	31	0	31	0.00041

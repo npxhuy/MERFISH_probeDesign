@@ -41,6 +41,8 @@ Run this inside the lungs_microbes to make the same folder name in the extract_d
 
 `for folder in */; do for file in "$folder"*.gtf; do grep -v "#" "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"; done; done`
 
+
+
 4. Run the paintshop pipeline on the extract_data
 
 NOTE: remember to specify the temperature and length of probes in the loop_paintshop.sh when making config file, or else it will use the default parameter
@@ -78,6 +80,15 @@ Combine the fna file, exclude one microbe to make db
 Server
 `ls | while read folder; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -in $folder/$folder.fasta -dbtype nucl -out ../blast_db/$folder/$folder; done`
 
+`ls | while read folder; do mkdir ../05_blast_db_combined/$folder; ls | grep -v $folder | while read microbe; do cat $microbe/$microbe.fna >> ../05_blast_db_combined/$microbe/$microbe.fasta; done; /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -in $folder/$folder.fasta -dbtype nucl -out ../blast_db/$folder/$folder; done`
+
+
+.
+ls 03_copy_of_02 | while read folder; do mkdir 05_blast_db_combined/$folder; ls done
+
+ls | while read folder; do ls | grep
+
+
 One thing to notice that makedb here i made it before realising there were problems with the probes so the db of those problematic microbes that cant produce the probes are still here, which is fine I guess???
 
 7. Move the probes to another folder\
@@ -85,6 +96,8 @@ One thing to notice that makedb here i made it before realising there were probl
 
 Filter the file, and wrote it as a fasta file cause blastn want it fasta
   `ls | while read folder; do cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../probes/$folder/$folder.fasta; done`
+
+  ls | while read folder; do mkdir ../04_probes/$folder; cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../04_probes/$folder/$folder.fasta; done
 
 8. Run blastn
 
@@ -94,6 +107,7 @@ Run blastn on the db, probes directory
 
 On the server it took about 4 hour for 58 samples, take it into account when writing time
 `ls | while read folder; do blastn -db ../blast_db/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../blastn/$folder/$folder.txt`
+
 
 
 9. Filter uniq probes
@@ -148,3 +162,19 @@ Find the universal probes
 `ls | while read folder; do grep "Sbjct" -B 2 $folder/$folder.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -f - ../probes/$folder/$folder.fasta | grep -v ">" > ../univ_probes/univ_$folder.txt; done`
 - 
 
+
+Bracken report file
+
+ls | while read folder; do bracken -d /sw/data/Kraken2_data/prebuilt/k2_pluspf_20221209/ -i $folder/$folder.report -l S -r 100 -t 1 -o ../07_bracken_2/1_threshold/$folder.bracken_1; done
+
+ls | while read folder; do bracken -d /sw/data/Kraken2_data/prebuilt/k2_pluspf_20221209/ -i $folder/$folder.report -l S -r 100 -t 8 -o ../07_bracken_2/8_threshold/$folder.bracken_8; done
+
+
+cut -f1 * | sort | uniq > 2_uniq_speices.txt
+
+
+# Univ probes
+## makedb individual species
+`cat finish_microbe.txt | while read microbe; do mkdir blast_db_individual/$microbe; /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -in extract_data/$microbe/$microbe.fna -dbtype nucl -out blast_db_individual/$microbe/$microbe; done`
+
+## cd 

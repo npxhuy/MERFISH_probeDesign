@@ -1,0 +1,8 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Acinetobacter ursingii	108980	S	18	870	888	0.10410
+Acinetobacter baumannii	470	S	12	3128	3140	0.36811
+Denitrificimonas caeni	521720	S	22	0	22	0.00258
+Klebsiella michiganensis	1134687	S	26	587	613	0.07186
+Stenotrophomonas maltophilia	40324	S	17	90	107	0.01254
+Cutibacterium acnes	1747	S	1986	1687	3673	0.43060
+Actinomyces sp. oral taxon 414	712122	S	55	29	84	0.00985

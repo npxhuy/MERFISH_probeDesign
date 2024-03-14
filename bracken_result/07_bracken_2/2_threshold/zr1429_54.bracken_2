@@ -1,0 +1,27 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	41898	35486	77384	0.91101
+Cutibacterium modestum	2559073	S	2	3	5	0.00006
+Arthrobacter sp. Helios	2828862	S	2	1203	1205	0.01419
+Microbacterium amylolyticum	936337	S	2	11	13	0.00015
+Corynebacterium durum	61592	S	10	0	10	0.00012
+Corynebacterium glutamicum	1718	S	5	419	424	0.00499
+Actinomyces sp. oral taxon 414	712122	S	10	8	18	0.00021
+Streptomyces malaysiensis	92644	S	4	0	4	0.00005
+Staphylococcus aureus	1280	S	22	321	343	0.00404
+Staphylococcus epidermidis	1282	S	5	4	9	0.00011
+Bacillus spizizenii	96241	S	11	0	11	0.00013
+Listeria monocytogenes	1639	S	5	2477	2482	0.02922
+Anaerococcus sp. Marseille-Q7828	3036300	S	63	0	63	0.00074
+Filifactor alocis	143361	S	5	24	29	0.00034
+Rhodoferax koreense	1842727	S	3	1541	1544	0.01818
+Candidatus Symbiobacter mobilis	1436290	S	2	27	29	0.00034
+Burkholderia pseudomallei	28450	S	6	203	209	0.00246
+Burkholderia mallei	13373	S	5	467	472	0.00556
+Chromobacterium paludis	2605945	S	7	45	52	0.00061
+Xanthomonas albilineans	29447	S	226	91	317	0.00373
+Stenotrophomonas maltophilia	40324	S	10	36	46	0.00054
+Haemophilus parainfluenzae	729	S	176	46	222	0.00261
+Escherichia coli	562	S	3	31	34	0.00040
+Steroidobacter denitrificans	465721	S	2	0	2	0.00002
+Cupidesulfovibrio liaohensis	2604158	S	2	0	2	0.00002
+Homo sapiens	9606	S	3	0	3	0.00004

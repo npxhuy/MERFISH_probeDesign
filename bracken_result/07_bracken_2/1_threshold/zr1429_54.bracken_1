@@ -1,0 +1,64 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	41898	35464	77362	0.90410
+Cutibacterium modestum	2559073	S	2	3	5	0.00006
+Nocardioides panacis	2849501	S	1	0	1	0.00001
+Arthrobacter sp. Helios	2828862	S	2	1203	1205	0.01408
+Microbacterium amylolyticum	936337	S	2	11	13	0.00015
+Corynebacterium durum	61592	S	10	0	10	0.00012
+Corynebacterium glutamicum	1718	S	5	288	293	0.00342
+Corynebacterium gerontici	2079234	S	1	0	1	0.00001
+Corynebacterium diphtheriae	1717	S	1	135	136	0.00159
+Mycobacteroides abscessus	36809	S	1	0	1	0.00001
+Actinomyces sp. oral taxon 414	712122	S	10	8	18	0.00021
+Streptomyces malaysiensis	92644	S	4	0	4	0.00005
+Streptomyces armeniacus	83291	S	1	0	1	0.00001
+Streptomyces sp. NA02536	2742133	S	1	0	1	0.00001
+Bifidobacterium adolescentis	1680	S	1	0	1	0.00001
+Streptococcus oralis	1303	S	1	161	162	0.00189
+Streptococcus pyogenes	1314	S	1	167	168	0.00196
+Latilactobacillus sakei	1599	S	1	24	25	0.00029
+Enterococcus faecalis	1351	S	1	190	191	0.00223
+Staphylococcus aureus	1280	S	22	310	332	0.00388
+Staphylococcus epidermidis	1282	S	5	4	9	0.00011
+Staphylococcus ureilyticus	94138	S	1	8	9	0.00011
+Staphylococcus simulans	1286	S	1	0	1	0.00001
+Staphylococcus hominis	1290	S	1	0	1	0.00001
+Staphylococcus pasteuri	45972	S	1	0	1	0.00001
+Bacillus spizizenii	96241	S	11	0	11	0.00013
+Bacillus halotolerans	260554	S	1	1	2	0.00002
+Bacillus velezensis	492670	S	1	60	61	0.00071
+Bacillus cereus	1396	S	1	6	7	0.00008
+Lysinibacillus sp. GJ-1	2896845	S	1	0	1	0.00001
+Listeria monocytogenes	1639	S	5	2415	2420	0.02828
+Gemella haemolysans	1379	S	1	0	1	0.00001
+Gemella sanguinis	84135	S	1	0	1	0.00001
+Anaerococcus sp. Marseille-Q7828	3036300	S	63	0	63	0.00074
+Filifactor alocis	143361	S	5	23	28	0.00033
+Peptostreptococcus sp. CBA3647	3003601	S	1	0	1	0.00001
+Clostridioides difficile	1496	S	1	1	2	0.00002
+Clostridium tetani	1513	S	1	0	1	0.00001
+Serpentinicella alkaliphila	1734049	S	1	0	1	0.00001
+Koleobacter methoxysyntrophicus	2751313	S	1	0	1	0.00001
+Rhodoferax koreense	1842727	S	3	706	709	0.00829
+Candidatus Symbiobacter mobilis	1436290	S	2	13	15	0.00018
+Comamonas sp. Y33R10-2	2853257	S	1	98	99	0.00116
+Delftia acidovorans	80866	S	1	805	806	0.00942
+Burkholderia pseudomallei	28450	S	6	191	197	0.00230
+Burkholderia mallei	13373	S	5	412	417	0.00487
+Massilia sp. WG5	1707785	S	1	9	10	0.00012
+Chromobacterium paludis	2605945	S	7	45	52	0.00061
+Xanthomonas albilineans	29447	S	226	91	317	0.00370
+Stenotrophomonas maltophilia	40324	S	10	36	46	0.00054
+Haemophilus parainfluenzae	729	S	176	45	221	0.00258
+Pseudomonas plecoglossicida	70775	S	1	53	54	0.00063
+Escherichia coli	562	S	3	30	33	0.00039
+Serratia sp. FGI94	671990	S	1	0	1	0.00001
+Steroidobacter denitrificans	465721	S	2	0	2	0.00002
+Candidatus Baumannia cicadellinicola	186490	S	1	0	1	0.00001
+Alteromonas macleodii	28108	S	1	0	1	0.00001
+Vibrio harveyi	669	S	1	0	1	0.00001
+Segatella oris	28135	S	1	1	2	0.00002
+Cupidesulfovibrio liaohensis	2604158	S	2	0	2	0.00002
+Hydrogenobaculum sp. HO	547144	S	1	0	1	0.00001
+Luteitalea pratensis	1855912	S	1	0	1	0.00001
+Homo sapiens	9606	S	3	0	3	0.00004

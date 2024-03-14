@@ -1,0 +1,52 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Schaalia meyeri	52773	S	6908	27661	34569	0.48326
+Schaalia turicensis	131111	S	5	15	20	0.00028
+Actinomyces respiraculi	2744574	S	2	1686	1688	0.02360
+Changpingibacter yushuensis	2758440	S	2	1	3	0.00004
+Cutibacterium acnes	1747	S	5132	3272	8404	0.11748
+Cutibacterium granulosum	33011	S	677	567	1244	0.01739
+Nocardioides coralli	2872154	S	2	0	2	0.00003
+Arthrobacter sp. Helios	2828862	S	2	1654	1656	0.02315
+Corynebacterium durum	61592	S	79	0	79	0.00110
+Corynebacterium afermentans	38286	S	2	0	2	0.00003
+Streptomyces sp. CGMCC 4.1456	3074897	S	4	0	4	0.00006
+Streptomyces sp. NA02536	2742133	S	3	1	4	0.00006
+Bifidobacterium adolescentis	1680	S	2	0	2	0.00003
+Streptococcus agalactiae	1311	S	16	3044	3060	0.04278
+Streptococcus pyogenes	1314	S	11	257	268	0.00375
+Streptococcus urinalis	149016	S	11	94	105	0.00147
+Streptococcus pneumoniae	1313	S	9	3308	3317	0.04637
+Streptococcus parasuis	1501662	S	8	430	438	0.00612
+Streptococcus sanguinis	1305	S	6	41	47	0.00066
+Streptococcus thermophilus	1308	S	5	96	101	0.00141
+Streptococcus sp. LPB0220	2610896	S	5	87	92	0.00129
+Streptococcus suis	1307	S	4	398	402	0.00562
+Streptococcus anginosus	1328	S	3	1972	1975	0.02761
+Streptococcus oralis	1303	S	2	45	47	0.00066
+Streptococcus infantis	68892	S	2	24	26	0.00036
+Streptococcus gordonii	1302	S	2	13	15	0.00021
+Latilactobacillus sakei	1599	S	2	19	21	0.00029
+Tetragenococcus halophilus	51669	S	2	26	28	0.00039
+Gemella sanguinis	84135	S	2352	547	2899	0.04053
+Gemella haemolysans	1379	S	761	159	920	0.01286
+Caldibacillus thermoamylovorans	35841	S	141	170	311	0.00435
+Bacillus cereus	1396	S	2	301	303	0.00424
+Bacillus velezensis	492670	S	2	27	29	0.00041
+Staphylococcus epidermidis	1282	S	8	14	22	0.00031
+Staphylococcus aureus	1280	S	8	124	132	0.00185
+Roseburia intestinalis	166486	S	27	2374	2401	0.03356
+Peptostreptococcus sp. CBA3647	3003601	S	1072	0	1072	0.01499
+Bulleidia sp. zg-1006	2806552	S	308	10	318	0.00445
+Deinococcus geothermalis	68909	S	41	11	52	0.00073
+Chromobacterium paludis	2605945	S	2	1670	1672	0.02337
+Haemophilus parahaemolyticus	735	S	237	29	266	0.00372
+Haemophilus parainfluenzae	729	S	140	26	166	0.00232
+Stenotrophomonas maltophilia	40324	S	3	42	45	0.00063
+Prevotella sp. oral taxon 299	652716	S	4	199	203	0.00284
+Prevotella melaninogenica	28132	S	2	324	326	0.00456
+Segatella oris	28135	S	8	582	590	0.00825
+Porphyromonas sp. oral taxon 275	712435	S	816	7	823	0.01151
+Fusobacterium varium	856	S	2	89	91	0.00127
+Fusobacterium pseudoperiodonticum	2663009	S	2	1126	1128	0.01577
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	74	41	115	0.00161
+Homo sapiens	9606	S	6	0	6	0.00008

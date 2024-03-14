@@ -1,0 +1,21 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	17851	14861	32712	0.40132
+Corynebacterium macginleyi	38290	S	9553	10478	20031	0.24575
+Schaalia meyeri	52773	S	773	6070	6843	0.08395
+Dermabacter vaginalis	1630135	S	38	84	122	0.00150
+Slackia heliotrinireducens	84110	S	75	544	619	0.00759
+Streptococcus agalactiae	1311	S	21	10341	10362	0.12712
+Streptococcus pyogenes	1314	S	20	1069	1089	0.01336
+Streptococcus thermophilus	1308	S	19	596	615	0.00754
+Streptococcus suis	1307	S	10	237	247	0.00303
+Streptococcus gordonii	1302	S	10	125	135	0.00166
+Gemella haemolysans	1379	S	1412	562	1974	0.02422
+Gemella sanguinis	84135	S	143	68	211	0.00259
+Peptostreptococcus sp. CBA3647	3003601	S	429	0	429	0.00526
+Clostridium sp. SY8519	1042156	S	13	879	892	0.01094
+Bulleidia sp. zg-1006	2806552	S	42	8	50	0.00061
+Prevotella sp. oral taxon 299	652716	S	610	2155	2765	0.03392
+Prevotella melaninogenica	28132	S	58	549	607	0.00745
+Aquirhabdus parva	2283318	S	271	158	429	0.00526
+Klebsiella michiganensis	1134687	S	40	65	105	0.00129
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	59	1207	1266	0.01553

@@ -1,0 +1,11 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	49157	36292	85449	0.79196
+Corynebacterium suedekumii	3049801	S	423	0	423	0.00392
+Corynebacterium matruchotii	43768	S	12	3505	3517	0.03260
+Mycobacterium spongiae	886343	S	112	47	159	0.00147
+Anaerococcus sp. Marseille-Q7828	3036300	S	1368	0	1368	0.01268
+Anaerococcus prevotii	33034	S	169	934	1103	0.01022
+Finegoldia magna	1260	S	576	39	615	0.00570
+Staphylococcus aureus	1280	S	8	318	326	0.00302
+Moraxella catarrhalis	480	S	9	14743	14752	0.13672
+Homo sapiens	9606	S	179	2	181	0.00168

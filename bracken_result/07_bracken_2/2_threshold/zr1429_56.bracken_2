@@ -1,0 +1,8 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	601	1439	2040	0.76865
+Janibacter indicus	857417	S	2	48	50	0.01884
+Actinomyces sp. oral taxon 414	712122	S	29	17	46	0.01733
+Staphylococcus aureus	1280	S	7	61	68	0.02562
+Bacillus cereus	1396	S	8	39	47	0.01771
+Acinetobacter baumannii	470	S	2	392	394	0.14846
+Vibrio coralliilyticus	190893	S	2	3	5	0.00188

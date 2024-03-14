@@ -1,0 +1,50 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Arthrobacter sp. Helios	2828862	S	2	24317	24319	0.29582
+Homoserinibacter sp. YIM 151385	2985506	S	3	0	3	0.00004
+Brevibacterium casei	33889	S	4	301	305	0.00371
+Cutibacterium acnes	1747	S	7037	5231	12268	0.14923
+Cutibacterium granulosum	33011	S	4179	6480	10659	0.12966
+Schaalia meyeri	52773	S	10	2566	2576	0.03133
+Actinobaculum sp. 313	2495645	S	61	425	486	0.00591
+Changpingibacter yushuensis	2758440	S	12	68	80	0.00097
+Trueperella pyogenes	1661	S	11	70	81	0.00099
+Corynebacterium glutamicum	1718	S	7	45	52	0.00063
+Mycobacteroides abscessus	36809	S	3	1	4	0.00005
+Streptomyces sp. NA02536	2742133	S	9	26	35	0.00043
+Streptomyces sp. CGMCC 4.1456	3074897	S	9	0	9	0.00011
+Streptomyces malaysiensis	92644	S	3	6	9	0.00011
+Bifidobacterium adolescentis	1680	S	3	1	4	0.00005
+Actinopolyspora erythraea	414996	S	2	0	2	0.00002
+Streptococcus agalactiae	1311	S	55	8871	8926	0.10858
+Streptococcus thermophilus	1308	S	34	729	763	0.00928
+Streptococcus pyogenes	1314	S	28	559	587	0.00714
+Streptococcus suis	1307	S	19	364	383	0.00466
+Streptococcus parasuis	1501662	S	15	760	775	0.00943
+Streptococcus oralis	1303	S	14	274	288	0.00350
+Streptococcus sanguinis	1305	S	14	87	101	0.00123
+Streptococcus pneumoniae	1313	S	10	8055	8065	0.09810
+Streptococcus anginosus	1328	S	9	2951	2960	0.03601
+Streptococcus infantis	68892	S	7	74	81	0.00099
+Streptococcus urinalis	149016	S	6	46	52	0.00063
+Streptococcus salivarius	1304	S	5	185	190	0.00231
+Streptococcus dysgalactiae	1334	S	5	1797	1802	0.02192
+Streptococcus mutans	1309	S	3	14	17	0.00021
+Streptococcus gordonii	1302	S	3	19	22	0.00027
+Streptococcus sp. LPB0220	2610896	S	3	47	50	0.00061
+Limosilactobacillus mucosae	97478	S	2	1380	1382	0.01681
+Lactobacillus gasseri	1596	S	9	83	92	0.00112
+Latilactobacillus sakei	1599	S	6	95	101	0.00123
+Liquorilactobacillus hordei	468911	S	2	24	26	0.00032
+Gemella haemolysans	1379	S	1798	922	2720	0.03309
+Bacillus cereus	1396	S	3	316	319	0.00388
+Bacillus sp. CMF12	2884834	S	2	4	6	0.00007
+Staphylococcus aureus	1280	S	2	5	7	0.00009
+Listeria monocytogenes	1639	S	4	4	8	0.00010
+Clostridium perfringens	1502	S	2	4	6	0.00007
+Burkholderia contaminans	488447	S	33	1493	1526	0.01856
+Stenotrophomonas maltophilia	40324	S	9	21	30	0.00036
+Blattabacterium cuenoti	1653831	S	2	1	3	0.00004
+Flexistipes sinusarabici	2352	S	2	0	2	0.00002
+Borreliella garinii	29519	S	2	0	2	0.00002
+Desulfurispirillum indicum	936456	S	2	0	2	0.00002
+Homo sapiens	9606	S	4	0	4	0.00005

@@ -1,0 +1,46 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus agalactiae	1311	S	18	5271	5289	0.07847
+Streptococcus sanguinis	1305	S	13	147	160	0.00237
+Streptococcus gordonii	1302	S	11	135	146	0.00217
+Streptococcus suis	1307	S	8	257	265	0.00393
+Streptococcus oralis	1303	S	6	207	213	0.00316
+Streptococcus pneumoniae	1313	S	6	7812	7818	0.11600
+Streptococcus pyogenes	1314	S	6	205	211	0.00313
+Streptococcus infantis	68892	S	5	92	97	0.00144
+Gemella sanguinis	84135	S	926	326	1252	0.01858
+Staphylococcus aureus	1280	S	31	85	116	0.00172
+Bacillus cereus	1396	S	5	365	370	0.00549
+Veillonella rodentium	248315	S	12	4313	4325	0.06417
+Veillonella atypica	39777	S	7	4583	4590	0.06810
+Peptostreptococcus sp. CBA3647	3003601	S	1213	0	1213	0.01800
+Clostridioides difficile	1496	S	6	1382	1388	0.02059
+Stomatobaculum sp. F0698	3059030	S	247	0	247	0.00366
+Lachnoanaerobaculum gingivalis	2490855	S	207	0	207	0.00307
+Mogibacterium diversum	114527	S	114	470	584	0.00866
+Mogibacterium pumilum	86332	S	6	26	32	0.00047
+Parvimonas micra	33033	S	1112	191	1303	0.01933
+Bulleidia sp. zg-1006	2806552	S	453	33	486	0.00721
+Schaalia meyeri	52773	S	955	3098	4053	0.06013
+Cutibacterium acnes	1747	S	1359	1495	2854	0.04234
+Propionibacterium acidifaciens	556499	S	16	1140	1156	0.01715
+Lancefieldella parvula	1382	S	93	1	94	0.00139
+Olsenella uli	133926	S	22	0	22	0.00033
+Prevotella sp. oral taxon 299	652716	S	977	2940	3917	0.05812
+Prevotella nigrescens	28133	S	513	8095	8608	0.12772
+Prevotella melaninogenica	28132	S	429	3694	4123	0.06117
+Prevotella histicola	470565	S	408	2070	2478	0.03677
+Prevotella denticola	28129	S	15	168	183	0.00272
+Prevotella intermedia	28131	S	9	78	87	0.00129
+Segatella oris	28135	S	211	788	999	0.01482
+Hoylesella buccalis	28127	S	18	45	63	0.00093
+Porphyromonas endodontalis	28124	S	475	79	554	0.00822
+Porphyromonas sp. oral taxon 275	712435	S	41	0	41	0.00061
+Fusobacterium animalis	76859	S	7	320	327	0.00485
+Fusobacterium hwasookii	1583098	S	7	2978	2985	0.04429
+Fusobacterium varium	856	S	5	65	70	0.00104
+Fusobacterium polymorphum	76857	S	5	1269	1274	0.01890
+Haemophilus parainfluenzae	729	S	1194	68	1262	0.01872
+Haemophilus parahaemolyticus	735	S	201	10	211	0.00313
+Massilia sp. DM-R-R2A-13	2899220	S	48	218	266	0.00395
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	647	786	1433	0.02126
+Coprothermobacter proteolyticus	35786	S	9	0	9	0.00013

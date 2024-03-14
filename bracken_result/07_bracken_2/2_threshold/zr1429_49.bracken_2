@@ -1,0 +1,79 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus agalactiae	1311	S	34	9653	9687	0.15285
+Streptococcus pyogenes	1314	S	21	637	658	0.01038
+Streptococcus suis	1307	S	19	366	385	0.00607
+Streptococcus oralis	1303	S	18	547	565	0.00892
+Streptococcus thermophilus	1308	S	15	442	457	0.00721
+Streptococcus gordonii	1302	S	14	137	151	0.00238
+Streptococcus infantis	68892	S	13	209	222	0.00350
+Streptococcus parasuis	1501662	S	11	826	837	0.01321
+Streptococcus sanguinis	1305	S	8	76	84	0.00133
+Streptococcus pneumoniae	1313	S	7	9657	9664	0.15249
+Streptococcus sp. LPB0220	2610896	S	7	168	175	0.00276
+Streptococcus mutans	1309	S	5	38	43	0.00068
+Streptococcus anginosus	1328	S	5	2694	2699	0.04259
+Streptococcus urinalis	149016	S	4	46	50	0.00079
+Granulicatella elegans	137732	S	10	342	352	0.00555
+Latilactobacillus sakei	1599	S	2	38	40	0.00063
+Gemella sanguinis	84135	S	4319	746	5065	0.07992
+Gemella haemolysans	1379	S	208	34	242	0.00382
+Bacillus cereus	1396	S	5	333	338	0.00533
+Bacillus thuringiensis	1428	S	2	0	2	0.00003
+Bacillus velezensis	492670	S	4	11	15	0.00024
+Fictibacillus phosphorivorans	1221500	S	3	0	3	0.00005
+Stomatobaculum sp. F0698	3059030	S	897	0	897	0.01415
+Lachnoanaerobaculum gingivalis	2490855	S	483	0	483	0.00762
+Roseburia intestinalis	166486	S	2	599	601	0.00948
+Mogibacterium diversum	114527	S	829	381	1210	0.01909
+Mogibacterium neglectum	114528	S	2	0	2	0.00003
+Peptostreptococcus sp. CBA3647	3003601	S	250	0	250	0.00394
+Veillonella atypica	39777	S	38	1550	1588	0.02506
+Megasphaera stantonii	2144175	S	60	43	103	0.00163
+Dialister pneumosintes	39950	S	3	0	3	0.00005
+Selenomonas sputigena	69823	S	19	472	491	0.00775
+Bulleidia sp. zg-1006	2806552	S	989	106	1095	0.01728
+Parvimonas micra	33033	S	179	53	232	0.00366
+Schaalia meyeri	52773	S	25	16479	16504	0.26042
+Changpingibacter yushuensis	2758440	S	3	92	95	0.00150
+Tropheryma whipplei	2039	S	10	0	10	0.00016
+Cutibacterium acnes	1747	S	367	1005	1372	0.02165
+Cutibacterium granulosum	33011	S	9	79	88	0.00139
+Cutibacterium modestum	2559073	S	4	32	36	0.00057
+Corynebacterium kroppenstedtii	161879	S	9	24	33	0.00052
+Corynebacterium glutamicum	1718	S	2	71	73	0.00115
+Mycobacteroides abscessus	36809	S	2	3	5	0.00008
+Bifidobacterium adolescentis	1680	S	2	17	19	0.00030
+Streptomyces sp. NA02536	2742133	S	4	85	89	0.00140
+Lancefieldella parvula	1382	S	322	6	328	0.00518
+Lancefieldella sp. Marseille-Q7238	3022127	S	103	0	103	0.00163
+Olsenella uli	133926	S	25	0	25	0.00039
+Prevotella sp. oral taxon 299	652716	S	625	553	1178	0.01859
+Prevotella histicola	470565	S	175	328	503	0.00794
+Prevotella multiformis	282402	S	43	226	269	0.00424
+Prevotella nigrescens	28133	S	33	186	219	0.00346
+Prevotella denticola	28129	S	13	50	63	0.00099
+Prevotella melaninogenica	28132	S	8	22	30	0.00047
+Prevotella dentalis	52227	S	6	11	17	0.00027
+Segatella oris	28135	S	39	52	91	0.00144
+Hoylesella enoeca	76123	S	12	23	35	0.00055
+Hoylesella buccalis	28127	S	5	4	9	0.00014
+Porphyromonas sp. oral taxon 275	712435	S	443	6	449	0.00708
+Porphyromonas endodontalis	28124	S	62	24	86	0.00136
+Tannerella serpentiformis	712710	S	36	7	43	0.00068
+Tannerella forsythia	28112	S	4	0	4	0.00006
+Nonlabens spongiae	331648	S	3	5	8	0.00013
+Blattabacterium cuenoti	1653831	S	2	0	2	0.00003
+Fusobacterium animalis	76859	S	4	327	331	0.00522
+Fusobacterium pseudoperiodonticum	2663009	S	3	872	875	0.01381
+Fusobacterium canifelinum	285729	S	2	677	679	0.01071
+Leptotrichia wadei	157687	S	8	0	8	0.00013
+Leptotrichia buccalis	40542	S	5	0	5	0.00008
+Leptotrichia sp. oral taxon 212	712357	S	2	0	2	0.00003
+Haemophilus parainfluenzae	729	S	673	27	700	0.01105
+Escherichia coli	562	S	2	3	5	0.00008
+Providencia rettgeri	587	S	2	0	2	0.00003
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	177	78	255	0.00402
+Treponema vincentii	69710	S	2	0	2	0.00003
+Coprothermobacter proteolyticus	35786	S	2	0	2	0.00003
+Desulfurispirillum indicum	936456	S	2	0	2	0.00003
+Homo sapiens	9606	S	2	0	2	0.00003

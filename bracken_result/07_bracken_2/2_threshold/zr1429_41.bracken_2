@@ -1,0 +1,81 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus agalactiae	1311	S	54	9362	9416	0.14085
+Streptococcus oralis	1303	S	28	562	590	0.00883
+Streptococcus gordonii	1302	S	19	146	165	0.00247
+Streptococcus pyogenes	1314	S	18	368	386	0.00577
+Streptococcus sanguinis	1305	S	17	115	132	0.00197
+Streptococcus suis	1307	S	9	494	503	0.00752
+Streptococcus parasuis	1501662	S	8	467	475	0.00711
+Streptococcus urinalis	149016	S	7	61	68	0.00102
+Streptococcus thermophilus	1308	S	6	174	180	0.00269
+Streptococcus pneumoniae	1313	S	6	5483	5489	0.08211
+Streptococcus infantis	68892	S	5	51	56	0.00084
+Streptococcus mutans	1309	S	4	19	23	0.00034
+Streptococcus dysgalactiae	1334	S	2	1020	1022	0.01529
+Liquorilactobacillus hordei	468911	S	4	42	46	0.00069
+Latilactobacillus sakei	1599	S	3	46	49	0.00073
+Marinilactibacillus sp. 15R	1911586	S	11	276	287	0.00429
+Granulicatella adiacens	46124	S	2	19	21	0.00031
+Granulicatella elegans	137732	S	2	59	61	0.00091
+Enterococcus faecalis	1351	S	2	237	239	0.00358
+Gemella haemolysans	1379	S	4171	824	4995	0.07472
+Gemella sanguinis	84135	S	1273	328	1601	0.02395
+Gemella morbillorum	29391	S	930	472	1402	0.02097
+Staphylococcus aureus	1280	S	2	32	34	0.00051
+Bacillus cereus	1396	S	3	792	795	0.01189
+Bacillus thuringiensis	1428	S	3	1	4	0.00006
+Bacillus sp. Cs-700	2589818	S	5	0	5	0.00007
+Bacillus velezensis	492670	S	2	16	18	0.00027
+Fictibacillus phosphorivorans	1221500	S	3	0	3	0.00004
+Paenibacillus physcomitrellae	1619311	S	4	0	4	0.00006
+Paenibacillus polymyxa	1406	S	2	0	2	0.00003
+Listeria monocytogenes	1639	S	3	1	4	0.00006
+Lachnoanaerobaculum gingivalis	2490855	S	154	0	154	0.00230
+Stomatobaculum sp. F0698	3059030	S	79	0	79	0.00118
+Mogibacterium diversum	114527	S	450	598	1048	0.01568
+Peptostreptococcus sp. CBA3647	3003601	S	396	0	396	0.00592
+Clostridium sp. SY8519	1042156	S	2	11	13	0.00019
+Veillonella atypica	39777	S	12	1425	1437	0.02150
+Megasphaera stantonii	2144175	S	8	2	10	0.00015
+Selenomonas sp. oral taxon 920	1884263	S	78	1196	1274	0.01906
+Parvimonas micra	33033	S	859	296	1155	0.01728
+Bulleidia sp. zg-1006	2806552	S	24	1	25	0.00037
+Schaalia meyeri	52773	S	1263	7759	9022	0.13496
+Actinomyces sp. oral taxon 414	712122	S	44	946	990	0.01481
+Changpingibacter yushuensis	2758440	S	2	4	6	0.00009
+Corynebacterium macginleyi	38290	S	1014	2543	3557	0.05321
+Corynebacterium durum	61592	S	706	0	706	0.01056
+Cutibacterium acnes	1747	S	685	545	1230	0.01840
+Bifidobacterium adolescentis	1680	S	2	0	2	0.00003
+Haemophilus parainfluenzae	729	S	2210	963	3173	0.04746
+Haemophilus parahaemolyticus	735	S	61	18	79	0.00118
+Haemophilus sp. oral taxon 036	712310	S	4	19	23	0.00034
+Glaesserella parasuis	738	S	2	0	2	0.00003
+Cardiobacterium sp. Marseille-Q4385	2866573	S	519	982	1501	0.02245
+Cardiobacterium hominis	2718	S	74	113	187	0.00280
+Escherichia coli	562	S	2	4	6	0.00009
+Salmonella enterica	28901	S	2	136	138	0.00206
+Pantoea eucalypti	470933	S	2	0	2	0.00003
+Serratia sp. FGI94	671990	S	2	0	2	0.00003
+Neisseria elongata	495	S	2	1625	1627	0.02434
+Alysiella crassa	153491	S	2	919	921	0.01378
+Burkholderia mallei	13373	S	2	251	253	0.00378
+Fusobacterium vincentii	155615	S	10	1154	1164	0.01741
+Fusobacterium polymorphum	76857	S	8	1826	1834	0.02743
+Fusobacterium varium	856	S	3	35	38	0.00057
+Fusobacterium nucleatum	851	S	2	544	546	0.00817
+Fusobacterium pseudoperiodonticum	2663009	S	2	292	294	0.00440
+Prevotella sp. oral taxon 299	652716	S	1136	671	1807	0.02703
+Prevotella sp. Rep29	2691580	S	2	96	98	0.00147
+Prevotella jejuni	1177574	S	4	10	14	0.00021
+Hoylesella buccalis	28127	S	3	2	5	0.00007
+Porphyromonas sp. oral taxon 275	712435	S	611	17	628	0.00939
+Tannerella serpentiformis	712710	S	109	17	126	0.00188
+Capnocytophaga sputigena	1019	S	7	306	313	0.00468
+Chryseobacterium sp. CY350	2997336	S	7	0	7	0.00010
+Solitalea canadensis	995	S	2	0	2	0.00003
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	120	2696	2816	0.04212
+Candidatus Saccharimonas aalborgensis	1332188	S	18	2	20	0.00030
+Coprothermobacter proteolyticus	35786	S	7	0	7	0.00010
+Flexistipes sinusarabici	2352	S	2	0	2	0.00003
+Homo sapiens	9606	S	3	0	3	0.00004

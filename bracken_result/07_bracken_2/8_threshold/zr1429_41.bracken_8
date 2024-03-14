@@ -1,0 +1,37 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus agalactiae	1311	S	54	14758	14812	0.23302
+Streptococcus oralis	1303	S	28	926	954	0.01501
+Streptococcus gordonii	1302	S	19	258	277	0.00436
+Streptococcus pyogenes	1314	S	18	596	614	0.00966
+Streptococcus sanguinis	1305	S	17	195	212	0.00334
+Streptococcus suis	1307	S	9	854	863	0.01358
+Streptococcus parasuis	1501662	S	8	797	805	0.01266
+Marinilactibacillus sp. 15R	1911586	S	11	543	554	0.00872
+Gemella haemolysans	1379	S	4171	1042	5213	0.08201
+Gemella sanguinis	84135	S	1273	405	1678	0.02640
+Gemella morbillorum	29391	S	930	682	1612	0.02536
+Lachnoanaerobaculum gingivalis	2490855	S	154	0	154	0.00242
+Stomatobaculum sp. F0698	3059030	S	79	0	79	0.00124
+Mogibacterium diversum	114527	S	450	628	1078	0.01696
+Peptostreptococcus sp. CBA3647	3003601	S	396	0	396	0.00623
+Veillonella atypica	39777	S	12	1426	1438	0.02262
+Megasphaera stantonii	2144175	S	8	2	10	0.00016
+Selenomonas sp. oral taxon 920	1884263	S	78	1197	1275	0.02006
+Parvimonas micra	33033	S	859	586	1445	0.02273
+Bulleidia sp. zg-1006	2806552	S	24	2	26	0.00041
+Schaalia meyeri	52773	S	1263	7766	9029	0.14204
+Actinomyces sp. oral taxon 414	712122	S	44	946	990	0.01557
+Corynebacterium macginleyi	38290	S	1014	2566	3580	0.05632
+Corynebacterium durum	61592	S	706	0	706	0.01111
+Cutibacterium acnes	1747	S	685	558	1243	0.01955
+Haemophilus parainfluenzae	729	S	2210	1129	3339	0.05253
+Haemophilus parahaemolyticus	735	S	61	21	82	0.00129
+Cardiobacterium sp. Marseille-Q4385	2866573	S	519	988	1507	0.02371
+Cardiobacterium hominis	2718	S	74	114	188	0.00296
+Fusobacterium vincentii	155615	S	10	1493	1503	0.02365
+Fusobacterium polymorphum	76857	S	8	2361	2369	0.03727
+Prevotella sp. oral taxon 299	652716	S	1136	784	1920	0.03021
+Porphyromonas sp. oral taxon 275	712435	S	611	20	631	0.00993
+Tannerella serpentiformis	712710	S	109	18	127	0.00200
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	120	2702	2822	0.04440
+Candidatus Saccharimonas aalborgensis	1332188	S	18	2	20	0.00031

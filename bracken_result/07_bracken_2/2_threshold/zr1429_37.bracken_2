@@ -1,0 +1,64 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus thermophilus	1308	S	13	280	293	0.00339
+Streptococcus pneumoniae	1313	S	13	10937	10950	0.12680
+Streptococcus infantis	68892	S	12	120	132	0.00153
+Streptococcus parasuis	1501662	S	11	549	560	0.00648
+Streptococcus sanguinis	1305	S	10	62	72	0.00083
+Streptococcus pyogenes	1314	S	9	161	170	0.00197
+Streptococcus gordonii	1302	S	8	56	64	0.00074
+Streptococcus oralis	1303	S	7	131	138	0.00160
+Streptococcus suis	1307	S	7	164	171	0.00198
+Streptococcus agalactiae	1311	S	7	1233	1240	0.01436
+Streptococcus urinalis	149016	S	7	50	57	0.00066
+Streptococcus anginosus	1328	S	4	1525	1529	0.01771
+Streptococcus salivarius	1304	S	3	108	111	0.00129
+Streptococcus mutans	1309	S	2	8	10	0.00012
+Streptococcus sp. LPB0220	2610896	S	2	31	33	0.00038
+Latilactobacillus sakei	1599	S	3	50	53	0.00061
+Gemella sanguinis	84135	S	2859	352	3211	0.03718
+Bacillus cereus	1396	S	3	123	126	0.00146
+Bacillus thuringiensis	1428	S	2	0	2	0.00002
+Staphylococcus aureus	1280	S	2	3	5	0.00006
+Veillonella atypica	39777	S	16	4527	4543	0.05261
+Veillonella rogosae	423477	S	3	2339	2342	0.02712
+Megasphaera stantonii	2144175	S	19	204	223	0.00258
+Peptostreptococcus sp. CBA3647	3003601	S	1592	0	1592	0.01844
+Clostridioides difficile	1496	S	2	721	723	0.00837
+Lachnoanaerobaculum gingivalis	2490855	S	8	0	8	0.00009
+Mogibacterium diversum	114527	S	24	1192	1216	0.01408
+Clostridium perfringens	1502	S	2	210	212	0.00246
+Parvimonas micra	33033	S	540	200	740	0.00857
+Bulleidia sp. zg-1006	2806552	S	390	55	445	0.00515
+Schaalia meyeri	52773	S	914	10598	11512	0.13331
+Cutibacterium acnes	1747	S	1473	1440	2913	0.03373
+Lancefieldella parvula	1382	S	753	17	770	0.00892
+Lancefieldella sp. Marseille-Q7238	3022127	S	65	0	65	0.00075
+Prevotella histicola	470565	S	1270	13907	15177	0.17575
+Prevotella sp. oral taxon 299	652716	S	846	5652	6498	0.07525
+Prevotella melaninogenica	28132	S	304	5741	6045	0.07000
+Prevotella nigrescens	28133	S	20	683	703	0.00814
+Prevotella denticola	28129	S	13	317	330	0.00382
+Prevotella jejuni	1177574	S	3	84	87	0.00101
+Segatella oris	28135	S	129	1042	1171	0.01356
+Hoylesella buccalis	28127	S	13	72	85	0.00098
+Hoylesella enoeca	76123	S	3	42	45	0.00052
+Porphyromonas endodontalis	28124	S	936	77	1013	0.01173
+Porphyromonas sp. oral taxon 275	712435	S	101	1	102	0.00118
+Bacteroides eggerthii	28111	S	3	53	56	0.00065
+Bacteroides ovatus	28116	S	2	869	871	0.01009
+Tannerella forsythia	28112	S	105	0	105	0.00122
+Burkholderia mallei	13373	S	3	2488	2491	0.02885
+Haemophilus parainfluenzae	729	S	588	19	607	0.00703
+Haemophilus parahaemolyticus	735	S	314	6	320	0.00371
+Stenotrophomonas maltophilia	40324	S	10	80	90	0.00104
+Klebsiella michiganensis	1134687	S	15	6	21	0.00024
+Salmonella enterica	28901	S	2	140	142	0.00164
+Citrobacter sp. S171	2971264	S	2	0	2	0.00002
+Fusobacterium polymorphum	76857	S	5	1982	1987	0.02301
+Fusobacterium nucleatum	851	S	3	500	503	0.00582
+Fusobacterium canifelinum	285729	S	3	887	890	0.01031
+Fusobacterium animalis	76859	S	2	143	145	0.00168
+Treponema socranskii	53419	S	5	343	348	0.00403
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	24	213	237	0.00274
+Coprothermobacter proteolyticus	35786	S	20	0	20	0.00023
+Homo sapiens	9606	S	3	0	3	0.00003

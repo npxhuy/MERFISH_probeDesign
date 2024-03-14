@@ -1,0 +1,12 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	3911	4023	7934	0.76709
+Nocardioides sp. Kera G14	2884264	S	7	1	8	0.00077
+Actinomyces oris	544580	S	3	0	3	0.00029
+Proteiniclasticum sp. QWL-01	3036945	S	446	0	446	0.04312
+Bacillus cereus	1396	S	15	61	76	0.00735
+Pseudomonas sp. S09G 359	2054919	S	2	65	67	0.00648
+Pseudomonas putida	303	S	3	753	756	0.07309
+Stenotrophomonas maltophilia	40324	S	3	552	555	0.05366
+Methylobacterium organophilum	410	S	26	365	391	0.03780
+Flavobacterium sp. CJ74	2294119	S	51	7	58	0.00561
+Homo sapiens	9606	S	46	0	46	0.00445

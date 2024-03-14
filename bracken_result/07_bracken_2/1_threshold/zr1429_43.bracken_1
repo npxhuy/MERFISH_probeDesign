@@ -1,0 +1,4 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Stenotrophomonas maltophilia	40324	S	8	13	21	0.91304
+Pseudorhodoplanes sinuspersici	1235591	S	1	0	1	0.04348
+Neisseria meningitidis	487	S	1	0	1	0.04348

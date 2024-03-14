@@ -1,0 +1,15 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	6579	5794	12373	0.93072
+Corynebacterium glucuronolyticum	39791	S	76	189	265	0.01993
+Corynebacterium matruchotii	43768	S	35	49	84	0.00632
+Schaalia meyeri	52773	S	28	93	121	0.00910
+Actinobaculum sp. 313	2495645	S	26	1	27	0.00203
+Actinopolyspora erythraea	414996	S	2	0	2	0.00015
+Bacillus spizizenii	96241	S	16	0	16	0.00120
+Finegoldia magna	1260	S	25	1	26	0.00196
+Escherichia coli	562	S	4	280	284	0.02136
+Stenotrophomonas maltophilia	40324	S	2	12	14	0.00105
+Porphyromonas sp. oral taxon 275	712435	S	38	3	41	0.00308
+Segatella oris	28135	S	15	16	31	0.00233
+Prevotella sp. oral taxon 299	652716	S	3	0	3	0.00023
+Homo sapiens	9606	S	2	0	2	0.00015

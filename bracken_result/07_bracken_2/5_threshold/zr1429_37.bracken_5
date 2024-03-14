@@ -1,0 +1,42 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Streptococcus thermophilus	1308	S	13	308	321	0.00388
+Streptococcus pneumoniae	1313	S	13	12373	12386	0.14962
+Streptococcus infantis	68892	S	12	134	146	0.00176
+Streptococcus parasuis	1501662	S	11	611	622	0.00751
+Streptococcus sanguinis	1305	S	10	70	80	0.00097
+Streptococcus pyogenes	1314	S	9	182	191	0.00231
+Streptococcus gordonii	1302	S	8	62	70	0.00085
+Streptococcus oralis	1303	S	7	148	155	0.00187
+Streptococcus suis	1307	S	7	182	189	0.00228
+Streptococcus agalactiae	1311	S	7	1398	1405	0.01697
+Streptococcus urinalis	149016	S	7	56	63	0.00076
+Gemella sanguinis	84135	S	2859	400	3259	0.03937
+Veillonella atypica	39777	S	16	6866	6882	0.08313
+Megasphaera stantonii	2144175	S	19	205	224	0.00271
+Peptostreptococcus sp. CBA3647	3003601	S	1592	0	1592	0.01923
+Lachnoanaerobaculum gingivalis	2490855	S	8	0	8	0.00010
+Mogibacterium diversum	114527	S	24	2024	2048	0.02474
+Parvimonas micra	33033	S	540	247	787	0.00951
+Bulleidia sp. zg-1006	2806552	S	390	60	450	0.00544
+Schaalia meyeri	52773	S	914	10599	11513	0.13907
+Cutibacterium acnes	1747	S	1473	1445	2918	0.03525
+Lancefieldella parvula	1382	S	753	19	772	0.00933
+Lancefieldella sp. Marseille-Q7238	3022127	S	65	0	65	0.00079
+Prevotella histicola	470565	S	1270	13974	15244	0.18414
+Prevotella sp. oral taxon 299	652716	S	846	5681	6527	0.07884
+Prevotella melaninogenica	28132	S	304	5770	6074	0.07337
+Prevotella nigrescens	28133	S	20	686	706	0.00853
+Prevotella denticola	28129	S	13	319	332	0.00401
+Segatella oris	28135	S	129	1047	1176	0.01421
+Hoylesella buccalis	28127	S	13	73	86	0.00104
+Porphyromonas endodontalis	28124	S	936	79	1015	0.01226
+Porphyromonas sp. oral taxon 275	712435	S	101	1	102	0.00123
+Tannerella forsythia	28112	S	105	0	105	0.00127
+Haemophilus parainfluenzae	729	S	588	68	656	0.00792
+Haemophilus parahaemolyticus	735	S	314	25	339	0.00410
+Stenotrophomonas maltophilia	40324	S	10	82	92	0.00111
+Klebsiella michiganensis	1134687	S	15	29	44	0.00053
+Fusobacterium polymorphum	76857	S	5	3513	3518	0.04250
+Treponema socranskii	53419	S	5	343	348	0.00420
+Candidatus Nanosynbacter sp. HMT-352	2899133	S	24	213	237	0.00286
+Coprothermobacter proteolyticus	35786	S	20	0	20	0.00024

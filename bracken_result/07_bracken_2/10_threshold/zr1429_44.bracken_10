@@ -1,0 +1,13 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Cutibacterium acnes	1747	S	27201	19908	47109	0.68572
+Cutibacterium granulosum	33011	S	3903	3079	6982	0.10163
+Cutibacterium modestum	2559073	S	1621	2209	3830	0.05575
+Tropheryma whipplei	2039	S	4159	0	4159	0.06054
+Actinomyces massiliensis	461393	S	16	0	16	0.00023
+Streptococcus agalactiae	1311	S	26	5239	5265	0.07664
+Streptococcus oralis	1303	S	10	224	234	0.00341
+Dolosigranulum pigrum	29394	S	161	185	346	0.00504
+Gemella haemolysans	1379	S	158	177	335	0.00488
+Gemella sanguinis	84135	S	31	36	67	0.00098
+Parvimonas micra	33033	S	20	70	90	0.00131
+Homo sapiens	9606	S	263	0	263	0.00383
