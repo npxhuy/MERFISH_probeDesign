@@ -73,4 +73,22 @@ MERFISH :  https://www.pnas.org/doi/abs/10.1073/pnas.1912459116     dataset s1 s
 15.  Visualize how the number of unique probes change with chainging number of bases "probe matching criteria".
 
 16.  gene description and gene type for all unique probes. We have redundancy for some of the species with 1000s of unique probes how do we choose the 100 best? helps by knowing what protein coding sequence that are targeted. etc. of course useful for other studies later on.  
+
+
 17.   
+Either generate new read out probe landing sequences from Random sequence  
+
+
+OR check off-targets and change bps in existing read out probe landing sequences   
+
+then of course blast No Cs etc. no “CCCTAA” or “TTAGGG” sequences to exclude the potential binding to telomeres etc. (see below for ref.).
+
+
+
+
+
+https://ars.els-cdn.com/content/image/1-s2.0-S0006349517303430-mmc1.pdf
+
+The mm10 mouse genomic sequence (UCSC Genome Bioinformatics) was used to design subtelomere oligonucleotide probe pools in this study. To selectively label subtelomeric genomic regions, 100 kb regions at the end of each chromosome were selected (Table S1). Across those regions, a set of non-overlapping 35-nt probes were designed which suffice several constraints including 40-60% GC content, no more than 5 contiguous identical nucleotides, no “CCCTAA” or “TTAGGG” sequences to exclude the potential binding to telomeres, and at least 2-nt spaces between adjacent probe
+
+![image](https://github.com/npxhuy/thesis/assets/12096956/cbb284e6-7f2b-4458-b22e-dcefc292c29e)
