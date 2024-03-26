@@ -99,3 +99,72 @@ Grep -v the result of blastn in 4.3 vs the original probe to have the unique pro
 Example code:
 `ls | while read folder; do grep "Sbjct" -B 2 $folder/$folder.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - ../../04_probes/01_original/$folder/$folder.fasta | grep -v ">" > ../../04_probes/02_unique/$folder/$folder.txt; done`
 
+# 5. gene_id (& GeneID) finding of the probe
+
+Input requires two files: 
+1. the filtered gtf
+2. the probe's location
+
+## 5.1 Filtered GTF
+On 97 samples of microbes, only 63 have their *db_xref* (linking DNA sequence records to other external databases) to Entrez Gene Database. We aim to select probes that will land closely to each other (on similar region or having probe having same gene_id)
+
+To seperated between two kind of gtf file, two lists were made including gene_id_list.txt (gtf files do not have GeneID section) and GeneID_list.txt (gtf files that have GeneID section)
+
+Filter it to have the chromosome name, gene location (start and stop position) and gene id.
+
+Example code:
+- For GeneID files:
+
+`grep "GeneID" -m 1 03_copy_of_02/*/*.gtf | cut -d "/" -f2 > GeneID_list.txt`
+
+`cat GeneID_list.txt | while read name; do mkdir 06_gene_id/$name; grep "GeneID" 03_copy_of_02/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_filter.gtf; done`
+- For gene_id files:
+
+`grep "GeneID" -m 1 03_copy_of_02/*/*.gtf | cut -d "/" -f2| grep -v -f - microbes_list.txt > gene_id_list.txt`
+
+`cat gene_id_list.txt| while read name; do mkdir 06_gene_id/$name; awk -F'\t' '$3 == "CDS"' 03_copy_of_02/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n  > 06_gene_id/$name/${name}_filter.gtf; done`
+
+## 5.2 The probes' location
+Obtaining by parse the paintshop result and the uniq probe generate from **4.4**
+
+Example code:
+
+`cat microbes_list.txt | while read name; do grep -f 04_probes/02_unique/$name/$name.txt 03_copy_of_02/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f 1,2,3 | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_probe_location.txt; done`
+
+## 5.3 Find the gene_id from those two files
+
+`ls | while read name; do python3 ../../02_scripts/copilot_extract_gene_id.py $name/${name}_filter.gtf $name/${name}_probe_location.txt $name/${name}_gene_id.txt; done`
+
+
+# 6. Readout
+## 6.1 Readout sequences
+### 6.1.1 blastn the readout sequence
+From [MERFISH's paper 2016](https://www.pnas.org/doi/full/10.1073/pnas.1612826113#sec-2) SI (pnas.1612826113.sd01.xlsx). I found that they use 16 readout sequences in their probes. "The 20-nt, three-letter readout sequences were designed by generating a random set of sequences with the per-base probability of 25% for A, 25% for T, and 50% for G."
+
+Make individual database for BLAST, so we can run blastn of the 16 readout sequences against the database to see if they have any homology. 
+
+"subset of these sequences with no cross-homology regions longer than 11 contiguous bases." => So the wordsize will be 11.
+
+Example code:
+`ls | while read folder; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -in ../../03_copy_of_02/$folder/$folder.fna -dbtype nucl -out $folder/$folder; done`
+
+Turned out they are most of the query matched with the database hmm. Still we need to extract the ID and the location of the matches to evaluate.
+
+### 6.1.2 Preparation for evaluation of the readout sequence's location
+Making the input files, including the probes' location file and readouts' location file.
+
+Example code:
+`cat microbes_list.txt | while read microbe; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db 05_blast_plus/04_makedb_individual/$microbe/$microbe -query 07_readout/01_seq/readout_sequences.txt -word_size 11 -ungapped > 05_blast_plus/05_blastn_readout_sequence/$microbe/$microbe.txt; done`
+
+We then need the probes' location file to compare, we have it from 5.2, but we gonna extend the probes' location cause this readout sequence will be attach on either side of the probes, to be precise we want to know the 20 nucleotides before and after the probe loction if it matchs with the readout sequence or not, but to simplify and to boarden the range, we extend it to 60.
+
+Example code: `awk '{$2=$2-60; $3=$3+60; print}' filename`
+
+### 6.1.3 Evaluation of the readout sequence's location
+
+Now we have two files needed, we want to run the matching scripts to see if the readout sequence may match with the upper and lower region of the probe or not.
+
+Scripts: probe_readout_matching.py
+
+Example run:
+`ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
