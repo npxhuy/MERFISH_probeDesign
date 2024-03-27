@@ -72,6 +72,8 @@ Because the PaintSHOP's results has so many different info/columns and we want t
 
 Example code: `ls | while read folder; do mkdir ../04_probes/$folder; cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../04_probes/$folder/$folder.fasta; done`
 
+
+
 ## 4.2 BLAST+: makeblastdb
 Make database for running BLAST+. We will run blastn, for example, we have 3 sp. A,B,C; we will run sp. A's probes against B+C database. So the database for sp. A will include every other sp. exclude sp. A itself.
 
@@ -124,12 +126,19 @@ Example code:
 
 `cat gene_id_list.txt| while read name; do mkdir 06_gene_id/$name; awk -F'\t' '$3 == "CDS"' 03_copy_of_02/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n  > 06_gene_id/$name/${name}_filter.gtf; done`
 
+
+awk -F'\t' '$3 == "CDS" || $3 == "transcript"' 03_copy_of_02/$name/$name.gtf | awk '{print $1"\t"$4"\t"$5"\t"$9}' | awk -F';' '{print $1"; "$2";"}' | sort -t$'\t' -k1,1 -k2,2n  > 06_gene_id/$name/${name}_filter.gtf; done
+
+THIS CODE
+awk -F'\t' '$3 == "CDS" || $3 == "transcript"' ../03_copy_of_02/Acinetobacter_baumannii/Acinetobacter_baumannii.gtf | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g'
+
+
 ## 5.2 The probes' location
 Obtaining by parse the paintshop result and the uniq probe generate from **4.4**
 
 Example code:
 
-`cat microbes_list.txt | while read name; do grep -f 04_probes/02_unique/$name/$name.txt 03_copy_of_02/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f 1,2,3 | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_probe_location.txt; done`
+`cat microbes_list.txt | while read name; do grep -f 04_probes/02_unique/$name/$name.txt 03_copy_of_02/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_probe_location.txt; done`
 
 ## 5.3 Find the gene_id from those two files
 
@@ -168,3 +177,25 @@ Scripts: probe_readout_matching.py
 
 Example run:
 `ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
+
+cut -f 1,2,3,4,5,6,7,8,9,10 Acinetobacter_baumannii_probe_location.txt > b.txt
+python3 gene.py Acinetobacter_baumannii_filter.gtf b.txt a.txt
+
+
+
+
+
+
+/home/npxhuy/lu2023-17-27/hy/thesis/03_data/03_copy_of_02/Acinetobacter_baumannii/pipeline_output/03_output_files
+
+
+cat /home/npxhuy/lu2023-17-27/hy/thesis/03_data/03_copy_of_02/Acinetobacter_baumannii/pipeline_output/03_output_files/01_dna_probes/Acinetobacter_baumannii_all_newBalance.tsv
+
+/home/npxhuy/lu2023-17-27/hy/thesis/03_data
+
+TTGATCATGGCTCAGATTGAACGCTGGCGG
+
+/home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/blastn -db /home/npxhuy/lu2023-17-27/hy/thesis//03_data/05_blast_plus/02_makedb_01/Acinetobacter_baumannii/Acinetobacter_baumannii -query new_rna.txt -word_size 15 -ungapped > blastn_result.txt
+
+
+grep "Sbjct" -B 2 blastn_result.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - new_rna.txt | grep -v ">" > final_rna_probe.txt
