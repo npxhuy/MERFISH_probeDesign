@@ -143,7 +143,7 @@ streptococcus_phocae
 
 FOR LOOP 10.2, run in find_gene_id_sorted folder
 
-`ls | while read name; do awk -F'\t' '$3 == "CDS"' ../extract_data/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n  > $name/filter_$name.gtf; done`
+`ls | while read name; do awk -F'\t' '$3 == "CDS"' ../extract_data/$name/$name.gtf | cut -f1,2,3,4,5,6,7,8,9,10,11 | sort -t$'\t' -k1,1 -k2,2n  > $name/filter_$name.gtf; done`
 
 
 `ls | while read name; do python3 ../../02_scripts/copilot_extract_gene_id.py $name/filter_$name.gtf $name/probe_location_$name.txt $name/gene_id_$name.txt; done`

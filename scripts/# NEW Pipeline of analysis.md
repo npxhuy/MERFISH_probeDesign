@@ -108,29 +108,10 @@ Input requires two files:
 2. the probe's location
 
 ## 5.1 Filtered GTF
-On 97 samples of microbes, only 63 have their *db_xref* (linking DNA sequence records to other external databases) to Entrez Gene Database. We aim to select probes that will land closely to each other (on similar region or having probe having same gene_id)
-
-To seperated between two kind of gtf file, two lists were made including gene_id_list.txt (gtf files do not have GeneID section) and GeneID_list.txt (gtf files that have GeneID section)
-
-Filter it to have the chromosome name, gene location (start and stop position) and gene id.
+Filter it to have the chromosome name, gene location (start and stop position) and gene id & transcript.
 
 Example code:
-- For GeneID files:
-
-`grep "GeneID" -m 1 03_copy_of_02/*/*.gtf | cut -d "/" -f2 > GeneID_list.txt`
-
-`cat GeneID_list.txt | while read name; do mkdir 06_gene_id/$name; grep "GeneID" 03_copy_of_02/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_filter.gtf; done`
-- For gene_id files:
-
-`grep "GeneID" -m 1 03_copy_of_02/*/*.gtf | cut -d "/" -f2| grep -v -f - microbes_list.txt > gene_id_list.txt`
-
-`cat gene_id_list.txt| while read name; do mkdir 06_gene_id/$name; awk -F'\t' '$3 == "CDS"' 03_copy_of_02/$name/$name.gtf | cut -f1,4,5,9 | sort -t$'\t' -k1,1 -k2,2n  > 06_gene_id/$name/${name}_filter.gtf; done`
-
-
-awk -F'\t' '$3 == "CDS" || $3 == "transcript"' 03_copy_of_02/$name/$name.gtf | awk '{print $1"\t"$4"\t"$5"\t"$9}' | awk -F';' '{print $1"; "$2";"}' | sort -t$'\t' -k1,1 -k2,2n  > 06_gene_id/$name/${name}_filter.gtf; done
-
-THIS CODE
-awk -F'\t' '$3 == "CDS" || $3 == "transcript"' ../03_copy_of_02/Acinetobacter_baumannii/Acinetobacter_baumannii.gtf | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g'
+`cat microbes_list.txt | while read name; do awk -F'\t' '$3 == "CDS" || $3 == "transcript"' 03_copy_of_02/$name/$name.gtf | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g' > 06_gene_id/$name/${name}_filter.gtf; done`
 
 
 ## 5.2 The probes' location
@@ -138,12 +119,12 @@ Obtaining by parse the paintshop result and the uniq probe generate from **4.4**
 
 Example code:
 
-`cat microbes_list.txt | while read name; do grep -f 04_probes/02_unique/$name/$name.txt 03_copy_of_02/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | sort -t$'\t' -k1,1 -k2,2n > 06_gene_id/$name/${name}_probe_location.txt; done`
+`cat microbes_list.txt | while read name; do grep -f 04_probes/02_unique/$name/$name.txt 03_copy_of_02/$name/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | sort -t$'\t' -k1,1 -k2,2n | cut -f 1,2,3,4,5,6,7,8,10,11 > 06_gene_id/$name/${name}_probe_location.txt; done`
 
 ## 5.3 Find the gene_id from those two files
 
-`ls | while read name; do python3 ../../02_scripts/copilot_extract_gene_id.py $name/${name}_filter.gtf $name/${name}_probe_location.txt $name/${name}_gene_id.txt; done`
 
+Example code: `ls | while read name; do python3 ../../02_scripts/extract_gene_id.py $name/${name}_filter.gtf $name/${name}_probe_location.txt $name/${name}_gene_id.txt; done`
 
 # 6. Readout
 ## 6.1 Readout sequences
@@ -165,9 +146,11 @@ Making the input files, including the probes' location file and readouts' locati
 Example code:
 `cat microbes_list.txt | while read microbe; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db 05_blast_plus/04_makedb_individual/$microbe/$microbe -query 07_readout/01_seq/readout_sequences.txt -word_size 11 -ungapped > 05_blast_plus/05_blastn_readout_sequence/$microbe/$microbe.txt; done`
 
-We then need the probes' location file to compare, we have it from 5.2, but we gonna extend the probes' location cause this readout sequence will be attach on either side of the probes, to be precise we want to know the 20 nucleotides before and after the probe loction if it matchs with the readout sequence or not, but to simplify and to boarden the range, we extend it to 60.
+We then need the probes' location file to compare, we have it from 5 (take from 5.3 so we have all the info), but we gonna extend the probes' location cause this readout sequence will be attach on either side of the probes, to be precise we want to know the 20 nucleotides before and after the probe loction if it matchs with the readout sequence or not, but to simplify and to boarden the range, we extend it to 60.
 
-Example code: `awk '{$2=$2-60; $3=$3+60; print}' filename`
+Example code: `awk 'NR>1 {$2=$2-60; $3=$3+60; print}' filename`
+
+ls | while read file; do awk 'NR>1 {$2=$2-60; $3=$3+60; print}' ../../06_gene_id/$file/${file}_gene_id.txt > $file/${file}_extension_60_gene_id.txt; done
 
 ### 6.1.3 Evaluation of the readout sequence's location
 
@@ -178,24 +161,8 @@ Scripts: probe_readout_matching.py
 Example run:
 `ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
 
-cut -f 1,2,3,4,5,6,7,8,9,10 Acinetobacter_baumannii_probe_location.txt > b.txt
-python3 gene.py Acinetobacter_baumannii_filter.gtf b.txt a.txt
 
 
 
 
 
-
-/home/npxhuy/lu2023-17-27/hy/thesis/03_data/03_copy_of_02/Acinetobacter_baumannii/pipeline_output/03_output_files
-
-
-cat /home/npxhuy/lu2023-17-27/hy/thesis/03_data/03_copy_of_02/Acinetobacter_baumannii/pipeline_output/03_output_files/01_dna_probes/Acinetobacter_baumannii_all_newBalance.tsv
-
-/home/npxhuy/lu2023-17-27/hy/thesis/03_data
-
-TTGATCATGGCTCAGATTGAACGCTGGCGG
-
-/home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/blastn -db /home/npxhuy/lu2023-17-27/hy/thesis//03_data/05_blast_plus/02_makedb_01/Acinetobacter_baumannii/Acinetobacter_baumannii -query new_rna.txt -word_size 15 -ungapped > blastn_result.txt
-
-
-grep "Sbjct" -B 2 blastn_result.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - new_rna.txt | grep -v ">" > final_rna_probe.txt
