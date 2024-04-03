@@ -92,3 +92,7 @@ https://ars.els-cdn.com/content/image/1-s2.0-S0006349517303430-mmc1.pdf
 The mm10 mouse genomic sequence (UCSC Genome Bioinformatics) was used to design subtelomere oligonucleotide probe pools in this study. To selectively label subtelomeric genomic regions, 100 kb regions at the end of each chromosome were selected (Table S1). Across those regions, a set of non-overlapping 35-nt probes were designed which suffice several constraints including 40-60% GC content, no more than 5 contiguous identical nucleotides, no “CCCTAA” or “TTAGGG” sequences to exclude the potential binding to telomeres, and at least 2-nt spaces between adjacent probe
 
 ![image](https://github.com/npxhuy/thesis/assets/12096956/cbb284e6-7f2b-4458-b22e-dcefc292c29e)
+
+18.
+Please check that all probes for the microbes do not have off-targets in human. this will be the first selection criteria when we have many unique probes for a single species.
+ 
