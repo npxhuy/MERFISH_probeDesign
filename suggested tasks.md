@@ -95,4 +95,9 @@ The mm10 mouse genomic sequence (UCSC Genome Bioinformatics) was used to design 
 
 18.
 Please check that all probes for the microbes do not have off-targets in human. this will be the first selection criteria when we have many unique probes for a single species.
- 
+
+19. 
+Please check what melting temperatures were used in the papers we discussed. We need to motivate our choice of Tm for all calculations and selections. 
+
+20. Write methods completely describing the all selection criterias after paintshop generation of inital probe list.
+    
