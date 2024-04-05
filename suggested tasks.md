@@ -101,3 +101,5 @@ Please check what melting temperatures were used in the papers we discussed. We 
 
 20. Write methods completely describing the all selection criterias after paintshop generation of inital probe list.
     
+21. please check the discripancy for 69bit-mhd4 code are your code giving the same codebook as the (see teams message)? 
+Here is a formula I you can study and compare with  https://www.science.org/doi/10.1126/science.aaa6090. check Calculation of the predicted scaling and error properties of different encoding schemes 
