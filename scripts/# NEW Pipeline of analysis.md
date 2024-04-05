@@ -161,8 +161,17 @@ Scripts: probe_readout_matching.py
 Example run:
 `ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
 
+# 7. BlastN of the probe against human genome (should be include in 4 as well, will change later)
+
+Download fasta file of Human genome from https://www.ncbi.nlm.nih.gov/genome/guide/human/
+
+Makedb from the fasta file, and then run blastn on it (the fasta file will be the unique probe from each other of microbe)
 
 
 
+cat Xanthomonas_albilineans.txt | awk '{print ">\n"$0}'
 
 
+07_blastn_microbe_human]$ ls | while read folder; do ../../../04_tools/ncbi-blast-2.15.0+/bin/blastn -db ../06_makedb_human/GRCh38 -query ../../04_probes/02_unique/$folder/$folder.fasta -word_size 15 -ungapped > $folder/$folder.txt; done
+
+do the rev complement on unique_on_human of Taneerella_forsythia
