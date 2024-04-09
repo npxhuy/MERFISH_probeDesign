@@ -72,8 +72,6 @@ Because the PaintSHOP's results has so many different info/columns and we want t
 
 Example code: `ls | while read folder; do mkdir ../04_probes/$folder; cat $folder/pipeline_output/03_output_files/01_dna_probes/*Balance.tsv | cut -f4 | awk '{print ">\n"$0}' > ../04_probes/$folder/$folder.fasta; done`
 
-
-
 ## 4.2 BLAST+: makeblastdb
 Make database for running BLAST+. We will run blastn, for example, we have 3 sp. A,B,C; we will run sp. A's probes against B+C database. So the database for sp. A will include every other sp. exclude sp. A itself.
 
@@ -81,7 +79,8 @@ Make database for running BLAST+. We will run blastn, for example, we have 3 sp.
 Combine all the fasta file from every species excpet from the specie that will be run blastn against on.
 
 Example code:
-`ls | while read folder; do mkdir ..05_blast_plus/01_fasta_combined/$folder; ls | grep -v $folder | while read microbe; do cat $microbe/$microbe.fna >> ../05_blast_plus/01_fasta_combined/$folder/$folder.fasta; done; done`
+
+`ls | while read folder; do mkdir ../05_blast_plus/01_fasta_combined/$folder; ls | grep -v $folder | while read microbe; do cat $microbe/$microbe.fna >> ../05_blast_plus/01_fasta_combined/$folder/$folder.fasta; done; done`
 
 ### 4.2.2 makeblastdb
 Run makeblastdb. -in take the fasta file (that we just combined on 4.2.1) -dbtype is database type, -out indicate the directory of output.
@@ -93,25 +92,46 @@ Example code:
 Run blastn. -db is the location of the database we made on 4.2.2, -query is the probe we made on 4.1.
 
 Example code:
+
 `ls | while read folder; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db ../05_blast_plus/02_makedb_01/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../05_blast_plus/03_blastn/$folder/$folder.txt; done`
+
+Simplified code:
+
+`blastn -db db_name -query probe_in_fasta_format -word_size 15 -ungapped > blast_result_file`
 
 ## 4.4: Obtain "unique" probes:
 Grep -v the result of blastn in 4.3 vs the original probe to have the unique probe
 
 Example code:
+
 `ls | while read folder; do grep "Sbjct" -B 2 $folder/$folder.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - ../../04_probes/01_original/$folder/$folder.fasta | grep -v ">" > ../../04_probes/02_unique/$folder/$folder.txt; done`
+
+Simplified code:
+
+`grep "Sbjct" -B 2 blast_result_file | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - original_probe_file_in_fasta_format | grep -v ">" > unique_probe`
+
+## 4.5: BLAST+ against human genome
+Download fasta file of [Human genome](https://www.ncbi.nlm.nih.gov/genome/guide/human/)
+Do step 4.2.2, 4.3 and 4.4 again, but this time with the human genome instead of microbes against each other.
+
 
 # 5. gene_id (& GeneID) finding of the probe
 
-Input requires two files: 
-1. the filtered gtf
-2. the probe's location
+Summary:
+- Input: gtf file + probe's location file
+- Output: probe's location file with their gene_id
+- Script: see example code, note that you have to change the location of the file
+- Other note: performed on *Lunarc's server*, steps were stated below
 
 ## 5.1 Filtered GTF
 Filter it to have the chromosome name, gene location (start and stop position) and gene id & transcript.
 
 Example code:
+
 `cat microbes_list.txt | while read name; do awk -F'\t' '$3 == "CDS" || $3 == "transcript"' 03_copy_of_02/$name/$name.gtf | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g' > 06_gene_id/$name/${name}_filter.gtf; done`
+
+Simplified code:
+`awk -F'\t' '$3 == "CDS" || $3 == "transcript"' original_gtf_file | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g' > filter_gtf_file`
 
 
 ## 5.2 The probes' location
@@ -146,6 +166,7 @@ Making the input files, including the probes' location file and readouts' locati
 Example code:
 `cat microbes_list.txt | while read microbe; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db 05_blast_plus/04_makedb_individual/$microbe/$microbe -query 07_readout/01_seq/readout_sequences.txt -word_size 11 -ungapped > 05_blast_plus/05_blastn_readout_sequence/$microbe/$microbe.txt; done`
 
+
 We then need the probes' location file to compare, we have it from 5 (take from 5.3 so we have all the info), but we gonna extend the probes' location cause this readout sequence will be attach on either side of the probes, to be precise we want to know the 20 nucleotides before and after the probe loction if it matchs with the readout sequence or not, but to simplify and to boarden the range, we extend it to 60.
 
 Example code: `awk 'NR>1 {$2=$2-60; $3=$3+60; print}' filename`
@@ -158,20 +179,8 @@ Now we have two files needed, we want to run the matching scripts to see if the 
 
 Scripts: probe_readout_matching.py
 
-Example run:
+Example code:
 `ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
 
-# 7. BlastN of the probe against human genome (should be include in 4 as well, will change later)
-
-Download fasta file of Human genome from https://www.ncbi.nlm.nih.gov/genome/guide/human/
-
-Makedb from the fasta file, and then run blastn on it (the fasta file will be the unique probe from each other of microbe)
 
 
-
-cat Xanthomonas_albilineans.txt | awk '{print ">\n"$0}'
-
-
-07_blastn_microbe_human]$ ls | while read folder; do ../../../04_tools/ncbi-blast-2.15.0+/bin/blastn -db ../06_makedb_human/GRCh38 -query ../../04_probes/02_unique/$folder/$folder.fasta -word_size 15 -ungapped > $folder/$folder.txt; done
-
-do the rev complement on unique_on_human of Taneerella_forsythia
