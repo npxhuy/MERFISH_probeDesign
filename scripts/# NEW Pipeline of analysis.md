@@ -19,7 +19,7 @@ Summary:
 # 2. Download data of microbes.
 The number of classified speices with the threshold of 10 are 153. Using [Datasets command-line tools](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) to download the FASTA and GTF file of the microbes.
 
-The downloaded data is annotated, has a complete assembly level, comes from the RefSeq source, and is the latest assembly version. Some species have not been unclassified at species level yet so we exclude them. In the end we have 97 species left.
+The downloaded data is annotated, has a complete assembly level, comes from the RefSeq source, and is the latest assembly version. In the end we have 97 species left.
 
 Summary:
 - Input: a list of classified microbes
