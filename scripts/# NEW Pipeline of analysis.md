@@ -65,7 +65,7 @@ Summary:
 - Output: "unique" probes
 - Tool: BLAST+ (makeblastdb + blastn)
 - Script: see example code
-- Other note: performed on *Lunarc's server*, steps were stated below
+- Other note: performed on *Lunarc's server*, steps were stated below 
 
 ## 4.1 Extract the probes' results and change them to fasta format
 Because the PaintSHOP's results has so many different info/columns and we want the probes' column only for this part. Change to fasta format for BLAST+ to run normally.
@@ -95,7 +95,7 @@ Example code:
 
 `ls | while read folder; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db ../05_blast_plus/02_makedb_01/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../05_blast_plus/03_blastn/$folder/$folder.txt; done`
 
-Simplified code:
+Simplified code: Query  6   TGTAGGGTA  14
 
 `blastn -db db_name -query probe_in_fasta_format -word_size 15 -ungapped > blast_result_file`
 
@@ -183,4 +183,54 @@ Example code:
 `ls | while read folder; do python3 /home/npxhuy/02_scripts/probe_readout_matching.py $folder/${folder}_probe_location_extention.txt $folder/${folder}_readout_seq_location.txt $folder/${folder}_matching.txt`
 
 
+/home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/blastn -db /home/npxhuy/lu2023-17-27/hy/thesis/03_data/05_blast_plus/06_makedb_human/GRCh38 -query all_readout -word_size 11 -ungapped > all_readout_blast_human.txt
 
+/home/npxhuy/lu2023-17-27/hy/thesis/03_data/07_readout/05_TRUE_readout
+
+
+split -d -l $(($(wc -l <reads.txt) / 47)) reads.txt 01_reads/read
+
+
+____
+awk '{print ">\n"$0}' d11_i1_c10.txt > try2_reads.txt
+
+split -d -l $(($(wc -l < combine) / 24)) combine read
+
+nano blast2.py
+_
+
+#!/bin/python
+#SBATCH -A lu2023-7-68
+#SBATCH -p gpua100i
+#SBATCH -t 10:00:00
+#SBATCH -N 4
+#SBATCH --ntasks-per-node=10
+#SBATCH --mail-user=ph4342ng-s@student.lu.se
+#SBATCH --mail-type=ALL
+#SBATCH -J blast4
+#SBATCH -o /home/npxhuy/lu2023-17-27/hy/thesis/03_data/07_readout/05_filter_seq/blast4.out
+#SBATCH -e /home/npxhuy/lu2023-17-27/hy/thesis/03_data/07_readout/05_filter_seq/blast4.err
+#SBATCH -D /home/npxhuy/lu2023-17-27/hy/thesis/03_data/07_readout/05_filter_seq/05.2_try2_reads
+
+import subprocess
+import multiprocessing
+
+def run_blastn(file_name):
+    output_file = file_name
+    command = f"/home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/blastn -db /home/npxhuy/lu2023-17-27/hy/thesis/03_data/05_blast_plus/08_makedb_human_rna/GRCh38_rna -query {file_name} -word_size 11 -ungapped > ../06.2_try2_blast_human/{output_file}"
+    subprocess.run(command, shell=True)
+
+if __name__ == '__main__':
+    # List of file names
+    files = [f"read{str(i).zfill(2)}" for i in range(24)]
+
+    # Create a pool of worker processes
+    with multiprocessing.Pool() as pool:
+        pool.map(run_blastn, files)
+
+__
+
+grep "Sbjct" -B 2 blast_final.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - woAci.fasta | grep -v ">" > final_questionmark.txt
+
+
+ /home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -db 
