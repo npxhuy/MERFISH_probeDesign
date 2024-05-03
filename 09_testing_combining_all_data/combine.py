@@ -36,18 +36,31 @@ for index, row in name_df.iterrows():
                        sep='\s+', #not \t because the separator of geneid and transcript is sth idk
                        names=column_names)
     
-    quarter_size = len(probe_df) // 4
-    remainder = len(probe_df) % 4
-    print (quarter_size, remainder)
+    
 
-    for i in range(1, 5):
-        probe_df[f'Readout_{i}'] = ''
+   
     # Fill the 'Readout' columns with the readout values, leaving the corresponding quarter of each column empty
 
     # POSITION FROM CODEBOOK
     positions_str = codebook_df.loc[codebook_df['specie'] == specie, 'positions'].values[0]
     positions = positions_str.strip('[]').split() # Remove the brackets and split the string into a list
     positions = [int(pos) for pos in positions] # Convert the list elements to integers
+    
+
+    # FROM POSITION, TO READOUT_SEQ
+    readouts = [readout_df.loc[readout_df['position'] == pos, 'sequence'].values[0] for pos in positions]
+
+    # Create new columns for the readouts and initialize them with readout1,2,3,4 strings
+    for i in range(len(readouts)):
+        probe_df[f'Readout_{i+1}'] = readouts[i]
+
+    # Remove each readout from the list of readout column
+    for i in range(len(probe_df)):
+        readout_column = (i % len(readouts)) + 1
+        probe_df.loc[i, f'Readout_{readout_column}'] = ""
+        
+
+    '''
     pos1, pos2, pos3, pos4 = positions # Convert the list elements to integers
 
     # FROM POSITION, TO READOUT_SEQ
@@ -56,8 +69,30 @@ for index, row in name_df.iterrows():
     readout3 = readout_df.loc[readout_df['position'] == pos3, 'sequence'].values[0]
     readout4 = readout_df.loc[readout_df['position'] == pos4, 'sequence'].values[0]
 
+    
+    
+    #Create new columns for the readouts and initialize them with readout1,2,3,4 strings
+    for i in range(1, 5):
+        probe_df[f'Readout_{i}'] = locals()[f'readout{i}']
+    
+    # Remove each readout from the list of readout column
+    for i in range(len(probe_df)):
+        readout_column = (i % 4) + 1
+        probe_df.loc[i, f'Readout_{readout_column}'] = ""
+        '''
+    
+    # Create new columns for the readouts and initialize them with empty strings
     # All these conditions just to distribute the readout to the quarter of the probe_df equally
     # Can not find the better way to do this, yet.
+    # Found out, the above for loop
+    '''
+    quarter_size = len(probe_df) // 4
+    remainder = len(probe_df) % 4
+    print (quarter_size, remainder)
+
+    for i in range(1, 5):
+        probe_df[f'Readout_{i}'] = ''
+
     if remainder == 1:
         probe_df.loc[quarter_size + 1 :, 'Readout_1'] = readout1
 
@@ -79,7 +114,7 @@ for index, row in name_df.iterrows():
         probe_df.loc[:quarter_size*2 - 1 + 1 + 1, 'Readout_3'] = readout3
         probe_df.loc[quarter_size*3 + 1 + 1:, 'Readout_3'] = readout3
 
-        probe_df.loc[:quarter_size*3 - 1 +1 + 1 , 'Readout_4'] = readout4
+        probe_df.loc[:quarter_size*3 - 1 + 1 + 1 , 'Readout_4'] = readout4
     
     elif remainder == 3:
     
@@ -91,7 +126,7 @@ for index, row in name_df.iterrows():
         probe_df.loc[:quarter_size*2 - 1 + 1 + 1, 'Readout_3'] = readout3
         probe_df.loc[quarter_size*3 + 1 + 1 + 1:, 'Readout_3'] = readout3
 
-        probe_df.loc[:quarter_size*3 - 1 +1 + 1 + 1 , 'Readout_4'] = readout4
+        probe_df.loc[:quarter_size*3 - 1 + 1 + 1 + 1 , 'Readout_4'] = readout4
 
     else: 
         # Fill the 'Readout' columns with the readout values, leaving the corresponding quarter of each column empty
@@ -104,6 +139,14 @@ for index, row in name_df.iterrows():
         probe_df.loc[quarter_size*3 :, 'Readout_3'] = readout3
 
         probe_df.loc[:quarter_size*3 - 1 , 'Readout_4'] = readout4
+        
+    '''
+
+    # Create new columns for the readouts and initialize them with empty strings
+    # Calculate the size of each quarter
+
+    # Create new columns for the readouts and initialize them with empty strings
+    
     # Add 'Chr' and 'Seq' columns to combine_df
     combine_df = combine_df.append(probe_df.assign(Specie=specie, 
                                                Target=probe_df['Seq'],

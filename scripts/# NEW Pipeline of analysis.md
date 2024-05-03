@@ -234,3 +234,5 @@ grep "Sbjct" -B 2 blast_final.txt | grep "Query" | awk '{print $3}' | sort | uni
 
 
  /home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -db 
+
+ awk '/significant/,/>/' result_example2.txt | grep -v Seq | grep -v ">" | awk '{print $2}'
