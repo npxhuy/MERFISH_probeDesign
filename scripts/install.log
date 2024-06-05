@@ -1,0 +1,9 @@
+[23:47:34 2024-05-08] FETCHING Version 2.36.11
+[23:47:34 2024-05-08] CREATING /Users/hy/.spicetify
+[23:47:34 2024-05-08] DOWNLOADING https://github.com/spicetify/spicetify-cli/releases/download/v2.36.11/spicetify-2.36.11-darwin-amd64.tar.gz
+[23:47:35 2024-05-08] EXTRACTING /Users/hy/.spicetify/spicetify.tar.gz
+[23:47:35 2024-05-08] SETTING EXECUTABLE PERMISSIONS TO /Users/hy/.spicetify/spicetify
+[23:47:35 2024-05-08] REMOVING /Users/hy/.spicetify/spicetify.tar.gz
+[23:47:35 2024-05-08] APPENDING /Users/hy/.spicetify to PATH in /Users/hy/.zshrc
+[23:47:35 2024-05-08] spicetify v2.36.11 was installed successfully to /Users/hy/.spicetify
+[23:47:35 2024-05-08] Run 'spicetify --help' to get started

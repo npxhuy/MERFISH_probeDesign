@@ -40,6 +40,8 @@ The folder and file name of the reference genome data are named as their ID, so 
 Example code:
 `ls| while read microbes; do cd $microbes; ln -s ../../01_unzip_data/$microbes/ncbi_dataset/data/*/*.fna $microbes.fna; ln -s ../../01_unzip_data/$microbes/ncbi_dataset/data/*/*.gtf $microbes.gtf; cd ..; done`
 
+cat new_list.txt | while read microbes; do cd $microbes; ln -s /home/npxhuy/lu2023-17-27/hy/new_thesis/03_data/02_unzip_raw/$microbes/ncbi_dataset/data/*/*.fna $microbes.fna; ln -s /home/npxhuy/lu2023-17-27/hy/new_thesis/03_data/02_unzip_raw/$microbes/ncbi_dataset/data/*/*.gtf $microbes.gtf; cd ..; done
+
 Summary:
 - Input: data of classified microbes
 - Output: clean data of classified microbes
@@ -95,9 +97,9 @@ Example code:
 
 `ls | while read folder; do /home/npxhuy/04_tools/ncbi-blast-2.15.0+/bin/blastn -db ../05_blast_plus/02_makedb_01/$folder/$folder -query $folder/$folder.fasta -word_size 15 -ungapped > ../05_blast_plus/03_blastn/$folder/$folder.txt; done`
 
-Simplified code: Query  6   TGTAGGGTA  14
+Simplified code:
 
-`blastn -db db_name -query probe_in_fasta_format -word_size 15 -ungapped > blast_result_file`
+`blastn -db $db_name -query $probe_in_fasta_format -word_size 15 -ungapped > $blast_result_file`
 
 ## 4.4: Obtain "unique" probes:
 Grep -v the result of blastn in 4.3 vs the original probe to have the unique probe
@@ -230,9 +232,38 @@ if __name__ == '__main__':
 
 __
 
-grep "Sbjct" -B 2 blast_final.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - woAci.fasta | grep -v ">" > final_questionmark.txt
+grep "Sbjct" -B 2 human.txt | grep "Query" | awk '{print $3}' | sort | uniq | grep -v -f - out5.fasta | grep -v ">" > final_questionmark.txt
 
 
  /home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/makeblastdb -db 
 
  awk '/significant/,/>/' result_example2.txt | grep -v Seq | grep -v ">" | awk '{print $2}'
+
+
+
+
+/home/npxhuy/lu2023-17-27/hy/thesis/04_tools/ncbi-blast-2.15.0+/bin/blastn -db /home/npxhuy/lu2023-17-27/hy/thesis/03_data/05_blast_plus/02_makedb_01/Acinetobacter_baumannii/Acinetobacter_baumannii  -ungapp
+
+
+
+human ws 13
+microbe ws 15
+15/24
+
+
+
+>
+GTAGGAATATGCGCACCGGAAGGC
+>
+GCATAGCAAGTGACTAGGGCAGCG
+
+58.33% GC
+
+
+
+
+/home/npxhuy/lu2023-17-27/hy/thesis/03_data/03.2_copy_of_02
+
+cat ../../microbe_list_2024.txt | while read -r microbe; do folder=$(echo $microbe | tr ' ' '_'); datasets download genome taxon "$microbe" --annotated --assembly-level complete --assembly-source refseq --assembly-version latest --reference --include genome,gtf --filename $folder.zip; done
+
+

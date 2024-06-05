@@ -150,8 +150,8 @@ for index, row in name_df.iterrows():
     # Add 'Chr' and 'Seq' columns to combine_df
     combine_df = combine_df.append(probe_df.assign(Specie=specie, 
                                                Target=probe_df['Seq'],
-                                               Primer_1="TBU",
-                                               Primer_2="TBU",
+                                               Primer_1="GCCCGTGGGTTGCACATCTC",
+                                               Primer_2="AGACGCGGGAGCTAGCTGTC",
                                                Chr=probe_df['Chr'],
                                                Readout_1=probe_df['Readout_1'],
                                                Readout_2=probe_df['Readout_2'],
