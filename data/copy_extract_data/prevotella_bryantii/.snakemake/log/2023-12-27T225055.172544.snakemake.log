@@ -1,6 +1,0 @@
-Building DAG of jobs...
-Updating job 5 (merge_probes).
-Updating job 6 (gen_refseq_db).
-Updating job 7 (gen_iso_db).
-Updating job 10 (merge_flat_annotations).
-Updating job 13 (gen_refseq_db).

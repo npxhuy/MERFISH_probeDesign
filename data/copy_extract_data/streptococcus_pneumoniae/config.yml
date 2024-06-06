@@ -1,8 +1,0 @@
-assembly: 'streptococcus_pneumoniae'
-genome_fasta:  'streptococcus_pneumoniae.fna'
-annotation_file:  'streptococcus_pneumoniae.gtf'
-blockparse_min_length: 30
-blockparse_max_length: 30
-blockparse_min_tm: 42
-blockparse_max_tm: 47
-model_temp: 42

@@ -1,8 +1,0 @@
-assembly: 'veillonella_parvula'
-genome_fasta:  'veillonella_parvula.fna'
-annotation_file:  'veillonella_parvula.gtf'
-blockparse_min_length: 30
-blockparse_max_length: 30
-blockparse_min_tm: 42
-blockparse_max_tm: 47
-model_temp: 42

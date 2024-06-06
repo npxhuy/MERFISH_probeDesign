@@ -41,7 +41,9 @@ Example code:
 [PaintSHOP_pipeline](https://github.com/beliveau-lab/PaintSHOP_pipeline) was used to perform probe design. Follow the instructions on their GitHub to run the pipeline. The pipeline was run on a loop repeatedly on all microbes' data.
 
 
-The melting temperature, length of probes, and other settings need to be stated in the config.yml file. See the script *paintshop_loop* for more info. The error may occur when you give a high Tm with a short probe length, making the tool unable to produce any probes. With that Tm and length, some probes can satisfy the input. You can consider separating the code into two parts: generating a config.yml file for all the microbes and running PaintSHOP on the data for a less complicated task.
+The melting temperature, length of probes, and other settings need to be stated in the config.yml file. See the script *paintshop_loop.sh* for more info. This is a modified script base on their *run_pipeline.sh* script, to make it into a loop and write config.yml file for every species, that's the fundamental of the scripts, in case it's not working with you device, I suffered it too.
+
+ The error may occur when you give a high Tm with a short probe length, making the tool unable to produce any probes. With that Tm and length, some probes can satisfy the input. You can consider separating the code into two parts: generating a config.yml file for all the microbes and running PaintSHOP on the data for a less complicated task.
 
 
 Example of output:
@@ -159,8 +161,8 @@ I started with this file, a [FASTA file of the 240K 25mer barcodes](http://elled
 Example usage: `python3 cutting25mer.py bc25mer.240k.fasta cut_20mer.fasta`
 
 
-Those sequences then went through primer filtering (GC content, Tm, hairpin formation, etc.) using *primerfilter.py*.\
-Example usage: `python3 primerfilter.py cut_20mer.fasta left_over.fasta`
+Those sequences then went through primer filtering (GC content, Tm, hairpin formation, etc.) using *primerFilter.py*.\
+Example usage: `python3 primerFilter.py cut_20mer.fasta left_over.fasta`
 
 
 After this, repeat part **3.1.3**. Word size is 11 for human transcriptome and 12 for microbes. After this select two sequences being the potential primers.
