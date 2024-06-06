@@ -202,7 +202,7 @@ Microbes list
 > Acinetobacter_baumannii\
 Actinopolyspora_erythraea\
 Agathobacter_rectalis\
-Anaerococcus_mediterraneensis\
+Anaerococcus_mediterraneensis
 
 Codebook
 > 1111000000000000\
