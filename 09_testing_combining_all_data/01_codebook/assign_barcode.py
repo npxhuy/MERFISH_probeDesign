@@ -2,21 +2,21 @@ import sys
 import random
 
 # Get the input, output, and names file names from the command line arguments
-input_filename = sys.argv[1]
-names_filename = sys.argv[2]
+barcode_filename = sys.argv[1]
+microbes_filename = sys.argv[2]
 output_filename = sys.argv[3]
 
 # Read the names from the names file
-with open(names_filename, 'r') as names_file:
-    names = [line.strip() for line in names_file]
+with open(microbes_filename, 'r') as microbes_file:
+    names = [line.strip() for line in microbes_file]
 
 # Create a list to store the binary strings and positions
 binary_strings_and_positions = []
 
 # Open the input file
-with open(input_filename, 'r') as input_file:
+with open(barcode_filename, 'r') as barcode_file:
     # Read each line from the input file
-    for line in input_file:
+    for line in barcode_file:
         # Remove the newline character
         binary_string = line.strip()
         # Get the positions of the '1's

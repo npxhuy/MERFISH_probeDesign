@@ -46,8 +46,8 @@ The melting temperature, length of probes, and other settings need to be stated 
 
 Example of output:
 > NZ_CP043953.1   174     203     ATTGGCTGAACAATTGTCAGAAGGGCGGGT  42.480  100.000 0.000   0       0.307   0       +\
-> NZ_CP043953.1   256     285     AGTGAACAGCCTGCAACAACTACAGCAGCT  42.260  96.458  0.000   0       0.285   0       +\
-> NZ_CP043953.1   417     446     TGAAGGCCGTTCTAACCAAATGGCAGCAGA  42.200  100.000 0.000   0       0.265   0       +
+NZ_CP043953.1   256     285     AGTGAACAGCCTGCAACAACTACAGCAGCT  42.260  96.458  0.000   0       0.285   0       +\
+NZ_CP043953.1   417     446     TGAAGGCCGTTCTAACCAAATGGCAGCAGA  42.200  100.000 0.000   0       0.265   0       +
 
 
 
@@ -80,11 +80,11 @@ This step will be repeated many times. When we have the database, we run blastn 
 Example code: `cat $probe_result.tsv | cut -f4 | awk '{print ">\n"$0}' > $probe_result.fasta`\
 Example output:
 > \> \
->ATTGGCTGAACAATTGTCAGAAGGGCGGGT\
->\> \
->AGTGAACAGCCTGCAACAACTACAGCAGCT\
-> \> \
->TGAAGGCCGTTCTAACCAAATGGCAGCAGA
+ATTGGCTGAACAATTGTCAGAAGGGCGGGT\
+\> \
+AGTGAACAGCCTGCAACAACTACAGCAGCT\
+ \> \
+TGAAGGCCGTTCTAACCAAATGGCAGCAGA
 2. Run blastn. This could be heavy in term of computational resources, but not at this step yet.\
 Example code:`blastn -db $db_name -query $probe_result.fasta -word_size $number -ungapped > $blast_result_file`
 3. Parse blast result.\
@@ -105,23 +105,30 @@ This step required two inputs: 1. a filtered gtf file, and 2. a probes' location
 Example code: `awk -F'\t' '$3 == "CDS" || $3 == "transcript"' $microbe.gtf | cut -f 1,4,5,9 | cut -d ";" -f 1,2 | sed 's/gene_id\|transcript_id\|;\|\"//g' > $microbe_filter.gtf`\
 Example output:\
 > NZ_CP043953.1   1       1395     F3P16_RS00005  unassigned_transcript_1\
-> NZ_CP043953.1   1496    2641     F3P16_RS00010  unassigned_transcript_2\
-> NZ_CP043953.1   2659    3738     F3P16_RS00015  unassigned_transcript_3
+NZ_CP043953.1   1496    2641     F3P16_RS00010  unassigned_transcript_2\
+NZ_CP043953.1   2659    3738     F3P16_RS00015  unassigned_transcript_3
 2. Make probe location files. Obtaining by parsing the PaintSHOP result and the unique probes generated from **3.1.1** and the unique probe from **3.1.3**\
 Example code: `grep -f $unique_probe $probe_result.tsv | sort -t$'\t' -k1,1 -k2,2n | cut -f 1,2,3,4,5,6,7,8,10,11 > $probe_location.txt`
 Example output:\
 > NZ_CP043953.1   4164    4193    AAGTTTCAGGTGGCTTACACGGCGTAGGTG  42.210  100.000 0.000   0       0       +\
->NZ_CP043953.1   7868    7897    TTTATCGACTTTAGCGGGAGTTGGAGCGGC  42.100  100.000 0.000   0       0       +\
->NZ_CP043953.1   9963    9992    GCTCTAGTAGATCGTAGGCTGCGTGAGGGT  42.080  100.000 0.000   0       0       +
+NZ_CP043953.1   7868    7897    TTTATCGACTTTAGCGGGAGTTGGAGCGGC  42.100  100.000 0.000   0       0       +\
+NZ_CP043953.1   9963    9992    GCTCTAGTAGATCGTAGGCTGCGTGAGGGT  42.080  100.000 0.000   0       0       +
 3. Parse from those two files to get the result. Script *extract_gene_id.py* was written for this step.
-Example code: `python3 extract_gene_id.py $microbe_filter.gtf $probe_location.txt $output.txt`\
+Example code: `python3 extract_gene_id.py $microbe_filter.gtf $probe_location.txt $output_gene_id.txt`\
 Example output: No_Match indicates that the probe won't land in the coding region.
 > Chr     Start   Stop    Seq     Tm      on-targ off-targ        repeat  max k-m strand  GeneID  Transcript\
-> NZ_CP043953.1   4164    4193    AAGTTTCAGGTGGCTTACACGGCGTAGGTG  42.21   100.0   0.0     0       0       +        F3P16_RS00020  unassigned_transcript_4 \
-> NZ_CP043953.1   20214   20243   AAGCTGTACGGTGCTTAAGTGCACAGTGCT  42.2    98.981  494.522 0       3       +       No_Match        No_Match
+NZ_CP043953.1   4164    4193    AAGTTTCAGGTGGCTTACACGGCGTAGGTG  42.21   100.0   0.0     0       0       +        F3P16_RS00020  unassigned_transcript_4 \
+NZ_CP043953.1   20214   20243   AAGCTGTACGGTGCTTAAGTGCACAGTGCT  42.2    98.981  494.522 0       3       +       No_Match        No_Match
 
 
-For each species, we take a maximum of 50 probes and a minimum of 20; any species that doesn't have at least 20 probes was discarded.
+For each species, we take randomly a maximum of 50 probes and a minimum of 20; any species that doesn't have at least 20 probes was discarded. Probe that has "No_Match" and off-target score greater than 0.0 will be removed. Using the code *selecting_probe.sh*. This script was run in the directory where having all the subdirectorys' name are the microbes' name. In each subdirectory the *$output_gene_id.txt* from this step was named with the microbe name + _ + gene_id.txt. If you use a different naming or directory, you should chagne the *selecting_probe.sh* a little bit.
+
+Maybe not every species may went through all the extreme filtering steps, let's see how many we have left.
+
+Examle code: `wc -l */*gene_id.txt | awk '{print $2}' | cut -d / -f 1 | head -n -1 > final_microbes.txt`
+
+This will be our final list of microbes!
+
 ### 3.2 Readout sequence design
 Readout sequence design started with generating all possible combinations of A, T, and G with a % of ~25,25,50, respectively. The % varies a little bit; for example, for a 20-nt sequence, I could have 6A5T9G. This aims to generate as much sequence as possible for the readout selection. Use the script *generate.py* for this process.
 
@@ -165,8 +172,8 @@ The codebook was adapted from a [study on MERFISH](https://www.science.org/doi/1
 
 With a table of C(16,4,3), we will have the following information:
 > 1  2  3  4\
-> 1  2  5  6\
-> 1  2  7  8
+1  2  5  6\
+1  2  7  8
 
 
 These numbers indicate the position of 1 in a binary barcode, so for the first line, the barcode should be 1111000000000000. We first need to download the HTML file (website) with the position to generate the binary barcode. Right-click -> save as - so we can save the page's html file. Use *binary_barcode_generation.py* to generate the binary barcode.
@@ -174,18 +181,60 @@ These numbers indicate the position of 1 in a binary barcode, so for the first l
 
 Example usage: `python3 binary_barcode_generation.py $html_file $output`
 
-
-
-
 ## 5. Combine data
 We now have
-1. Target probes (3.1)
-2. Readout sequences (3.2)
-3. Primers (3.3)
-4. Codebook (4)\
-
+1. Target probes (from 3.1)
+2. Readout sequences (from 3.2)
+3. Primers (from 3.3)
+4. Codebook (from 4)
+5. Final microbes list (from 1,2 and the last step of 3.1)
 
 We can start combining them in the result table.
+
+### Making intermediate files from input
+1. 
+Create a directory called *01_codebook*, copy needed files stated below in.\
+We first will combine **Final list** with **Codebook**
+
+Microbes list
+> Acinetobacter_baumannii\
+Actinopolyspora_erythraea\
+Agathobacter_rectalis\
+Anaerococcus_mediterraneensis\
+
+Codebook
+> 1111000000000000\
+1100110000000000\
+1100001100000000\
+1100000011000000
+
+Run the script *assign_barcode.py* to combine them into an intermediate file. It will randomly assigne a barcode to a species, any barcode left was left with NO_ASSIGNED
+Example usage: `python3 assign_barcode.py codebook.txt microbes_list.txt assigned_output.txt`
+> Acinetobacter_baumannii	[4 6 12 14]	0001010000010100\
+Actinopolyspora_erythraea	[1 6 9 14]	1000010010000100\
+Agathobacter_rectalis	[11 12 13 14]	0000000000111100\
+Anaerococcus_mediterraneensis	[5 7 10 12]	0000101001010000
+
+2. 
+Create a directory called *02_readout_seq*, copy needed file stated below in.\
+16 readout sequences with their own round number (from 1 to 16)
+Example code: `nl -n ln -w 1 -s ' ' readout.txt > temp; rm readout.txt; mv temp readout.txt`
+
+3. 
+Create a directory called *03_selected_probes* and copy the result from **3.1** in, you might want to change the name of the file to without _gene_id.txt, at least in my case.
+### Combining them into one table
+Now that you got everything ready, a script *combine.py* was run outside the three above directories, and it will produce a file call *probe_table.tsv*
+You have to open the code, edit line 76-77 with your desire primers. I didnt do it smarter because I'm sort on time with my thesis, not that I do not have coding skills.
+
+Example output:
+>Specie  Chr     Primer_1        Readout_1       Readout_2       Target  Readout_3       Readout_4       Primer_2\
+Acinetobacter_baumannii NZ_CP043953.1   CGTGTTAGTGGCCCGGGTCT            AGATGGATAGGGTTATGAGT    AAAGAAGCCAGACAATTCGTCCCGGATGGC  AGATGTAGGTTAGGTGAGAG    GTTAGAGAGAGAGAGGGTTT    GGCCGCGACTAGGTAAGCCT\
+Acinetobacter_baumannii NZ_CP043953.1   CGTGTTAGTGGCCCGGGTCT    AGATTAGGAGGGTAGTTATG            ACATCCGGAGTCGAGGTTTCGCTTACACCC  AGATGTAGGTTAGGTGAGAG    GTTAGAGAGAGAGAGGGTTT    GGCCGCGACTAGGTAAGCCT\
+Acinetobacter_baumannii NZ_CP043953.1   CGTGTTAGTGGCCCGGGTCT    AGATTAGGAGGGTAGTTATG    AGATGGATAGGGTTATGAGT    TGTTCTTAGTCTCGTGTTAGGGTCCGGGCT          GTTAGAGAGAGAGAGGGTTT    GGCCGCGACTAGGTAAGCCT
+
+
+### Well done following the pipeline. Thanks for reading!!!
+
 
 
 

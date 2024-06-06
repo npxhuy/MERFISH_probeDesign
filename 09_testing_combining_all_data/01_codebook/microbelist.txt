@@ -33,11 +33,6 @@ Deinococcus_geothermalis
 Dermabacter_vaginalis
 Filifactor_alocis
 Finegoldia_magna
-Fusobacterium_animalis
-Fusobacterium_hwasookii
-Fusobacterium_polymorphum
-Fusobacterium_pseudoperiodonticum
-Fusobacterium_vincentii
 Gemella_haemolysans
 Gemella_morbillorum
 Gemella_sanguinis
@@ -55,7 +50,6 @@ Mogibacterium_diversum
 Mycobacterium_spongiae
 Neisseria_elongata
 Olsenella_uli
-Parvimonas_micra
 Peptoniphilus_equinus
 Prevotella_dentalis
 Prevotella_denticola
