@@ -1,6 +1,7 @@
 # Pipeline of analysis
 Note: some tasks are more computationally intense than others and more complicated; their location is in the *scripts* folder. Tasks/scripts are lightweight; they will be in "example code" in this document except were noted. Change the example code to fit your file's location/directory/naming.
 
+The figure below show the pipeline of analysis with the rectangle boxes equivalent to the sections in this README.
 ![alt text](https://github.com/npxhuy/MERFISH_probeDesign/blob/main/figure/flowchart_MD.png)
 
 ## 1. Classification of Microbes and Abundance estimation.
