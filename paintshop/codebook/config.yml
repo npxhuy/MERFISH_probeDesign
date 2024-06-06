@@ -1,3 +1,0 @@
-assembly: 'codebook'
-genome_fasta:  'codebook.fna'
-annotation_file:  'codebook.gtf'
