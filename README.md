@@ -1,6 +1,7 @@
 # Pipeline of analysis
 Note: some tasks are more computationally intense than others and more complicated; their location is in the *scripts* folder. Tasks/scripts are lightweight; they will be in "example code" in this document except were noted. Change the example code to fit your file's location/directory/naming.
 
+![alt text](https://github.com/npxhuy/MERFISH_probeDesign/blob/main/figure/flowchart_MD.png)
 
 ## 1. Classification of Microbes and Abundance estimation.
 [Metagenomics data](https://biorg.cs.fiu.edu/Smoking/) (RawData-CamposEtAl.zip) was taken from [this paper](https://www.microbiologyresearch.org/content/journal/acmi/10.1099/acmi.0.000497.v3#R52). The classification of microbes is done using the same pipeline from [my previous project](https://github.com/npxhuy/microbiome). Please refer to that GitHub link to do this step.
