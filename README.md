@@ -1,6 +1,6 @@
 # Pipeline of analysis
 Note: some tasks are more computationally intense than others and more complicated; their location is in the *scripts* folder. If 
-tasks/scripts are lightweight they will be in "example code" in this document except were noted. Change the example code to fit your file's location/directory/naming.
+tasks/scripts are lightweight example code snippet can be found in this document except were noted. Change the example code to fit your file's location/directory/naming.
 
 The figure below show the pipeline of analysis with the rectangle boxes equivalent to the sections in this README.
 ![alt text](https://github.com/npxhuy/MERFISH_probeDesign/blob/main/figure/flowchart_MD.png)
