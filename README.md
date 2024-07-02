@@ -1,6 +1,16 @@
+# Info of repository
+*figure* contains one figure using for this readme file.
+
+*presentation* contains the pdf file of my thesis presentation, link to the presentation could be found [here](https://prezi.com/p/qnwncghoovne/probedesign/?present=1) for online access.
+
+*report* contains the written thesis in *LaTeX* format, for online access through overleaf could be found [here](https://www.overleaf.com/read/twcjrfdwbwqb#076741).
+
+*scripts* contains all the scripts used for this project.
+
+*probe_table.tsv* is the final result of this project.
+
 # Pipeline of analysis
-Note: some tasks are more computationally intense than others and more complicated; their location is in the *scripts* folder. If 
-tasks/scripts are lightweight example code snippet can be found in this document except were noted. Change the example code to fit your file's location/directory/naming.
+Note: some tasks are more computationally intense than others and more complicated; their location is in the *scripts* folder. If tasks/scripts are lightweight example code snippet can be found in this document except were noted. Change the example code to fit your file's location/directory/naming.
 
 The figure below show the pipeline of analysis with the rectangle boxes equivalent to the sections in this README.
 ![alt text](https://github.com/npxhuy/MERFISH_probeDesign/blob/main/figure/flowchart_MD.png)
