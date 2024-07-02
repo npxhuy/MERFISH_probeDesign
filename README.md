@@ -44,7 +44,7 @@ Example code:
 [PaintSHOP_pipeline](https://github.com/beliveau-lab/PaintSHOP_pipeline) was used to perform probe design. Follow the instructions on their GitHub to run the pipeline. The pipeline was run on a loop repeatedly on all microbes' data.
 
 
-The melting temperature, length of probes, and other settings need to be stated in the config.yml file. See the script *paintshop_loop.sh* for more info. This is a modified script base on their *run_pipeline.sh(https://github.com/beliveau-lab/PaintSHOP_pipeline/blob/master/example_run/run_pipeline.sh) script, to make it into a loop and write config.yml file for every species, that's the fundamental of the scripts, in case it's not working with you device, I suffered it too.
+The melting temperature, length of probes, and other settings need to be stated in the config.yml file. See the script *paintshop_loop.sh* for more info. This is a modified script base on their *run_pipeline.sh* script, to make it into a loop and write config.yml file for every species, that's the fundamental of the scripts, in case it's not working with you device, I suffered it too.
 
  The error may occur when you give a high Tm with a short probe length, making the tool unable to produce any probes. With that Tm and length, some probes can satisfy the input. You can consider separating the code into two parts: generating a config.yml file for all the microbes and running PaintSHOP on the data for a less complicated task.
 
